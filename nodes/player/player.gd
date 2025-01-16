@@ -5,6 +5,12 @@ class_name Player3D
 
 @export var Speed : float = 5.0;
 
+@export var MouseSens : float = 0.3;
+
+
+# Components
+
+@onready var Camera : Camera3D = $Camera3D;
 
 
 # Processes
@@ -14,6 +20,12 @@ func _input(event: InputEvent) -> void:
 	if(event is InputEventMouseButton):
 		if(event.button_index == 1 and event.pressed):
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
+	
+	if(event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
+		var motion : Vector2 = event.screen_relative;
+		rotate_y(deg_to_rad(motion.x * MouseSens * -1));
+		Camera.rotate_x(deg_to_rad(motion.y * MouseSens * -1));
+		
 	
 	if(event.is_action_pressed("ui_cancel")):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;

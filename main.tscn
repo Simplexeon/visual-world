@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://fnnahimtwfap"]
+[gd_scene load_steps=6 format=3 uid="uid://fnnahimtwfap"]
 
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_miht2"]
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="2_r5r4s"]
+[ext_resource type="PackedScene" uid="uid://cpryxfj87j1jg" path="res://pieces/art_display_3d/art_display_3d.tscn" id="3_wkk5x"]
+[ext_resource type="PackedScene" uid="uid://csdn0tiq77b3o" path="res://pieces/10000_things/10000_things.tscn" id="4_487vk"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_51vp1"]
+viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
 
@@ -72,442 +77,445 @@ material = ExtResource("1_miht2")
 
 [node name="Lighting" type="Node3D" parent="World"]
 
-[node name="LightmapGI" type="LightmapGI" parent="World/Lighting"]
-bounce_indirect_energy = 0.5
-directional = true
-denoiser_strength = 0.15
-
 [node name="SpotLight3D" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 0)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 4)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 8)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 12)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 16)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 0)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 4)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 8)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D9" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 12)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D10" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 16)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D11" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 0)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D12" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 4)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D13" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 8)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D14" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 12)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D15" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 16)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D16" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, 0)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D21" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 0)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D22" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 4)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D23" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 8)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D24" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 12)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D25" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 16)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D26" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 0)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D27" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 4)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D28" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 8)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D29" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 12)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D30" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, 16)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D31" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 0)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D32" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 4)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D33" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 8)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D34" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 12)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D35" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, 16)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D36" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, 0)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D17" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, 4)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D18" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, 8)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D19" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, 12)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D20" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, 16)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D37" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -22)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D38" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -18)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D39" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -14)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D40" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -10)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D41" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -6)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D42" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -22)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D43" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -18)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D44" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -14)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D45" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -10)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D46" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -6)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D47" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -22)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D48" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -18)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D49" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -14)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D50" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -10)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D51" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -6)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D52" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, -22)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D53" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -22)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D54" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -18)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D55" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -14)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D56" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -10)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D57" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, -6)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D58" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -22)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D59" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -18)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D60" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -14)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D61" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -10)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D62" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.48761, -6)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D63" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -22)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D64" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -18)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D65" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -14)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D66" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -10)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D67" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 7.48761, -6)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D68" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, -22)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D69" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, -18)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D70" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, -14)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D71" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, -10)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="SpotLight3D72" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7, 7.48761, -6)
-light_energy = 2.0
+light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
 
 [node name="Player" parent="." instance=ExtResource("2_r5r4s")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0.89452, -7.19529)
+
+[node name="Displays" type="Node3D" parent="."]
+
+[node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
+texture = SubResource("ViewportTexture_51vp1")
+ArtPiece = ExtResource("4_487vk")
+Size = Vector2(700, 600)
