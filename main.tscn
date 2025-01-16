@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpryxfj87j1jg" path="res://pieces/art_display_3d/art_display_3d.tscn" id="3_wkk5x"]
 [ext_resource type="PackedScene" uid="uid://csdn0tiq77b3o" path="res://pieces/10000_things/10000_things.tscn" id="4_487vk"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_51vp1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ijv68"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -516,6 +516,6 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0.89452, -7.19529)
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_51vp1")
+texture = SubResource("ViewportTexture_ijv68")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(700, 600)

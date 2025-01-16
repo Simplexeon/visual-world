@@ -1,41 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://csdn0tiq77b3o"]
+[gd_scene load_steps=3 format=3 uid="uid://csdn0tiq77b3o"]
 
-[ext_resource type="Texture2D" uid="uid://bvpamt3rt0klt" path="res://icon.svg" id="1_6snvh"]
+[ext_resource type="Script" path="res://pieces/10000_things/10000_things.gd" id="1_e1bic"]
+[ext_resource type="PackedScene" uid="uid://bdm12m0kte0gc" path="res://pieces/10000_things/godot_thing.tscn" id="2_nemc5"]
 
 [node name="10000 Things" type="Node2D"]
+script = ExtResource("1_e1bic")
+DuplicationThing = ExtResource("2_nemc5")
+MaxSize = 1.5
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-217, -160)
-texture = ExtResource("1_6snvh")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(193, -212)
-texture = ExtResource("1_6snvh")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(-96, 174)
-texture = ExtResource("1_6snvh")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(204, 155)
-texture = ExtResource("1_6snvh")
-
-[node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(4, -21)
-texture = ExtResource("1_6snvh")
-
-[node name="Sprite2D6" type="Sprite2D" parent="."]
-position = Vector2(-437, 168)
-texture = ExtResource("1_6snvh")
-
-[node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(-45, -202)
-texture = ExtResource("1_6snvh")
-
-[node name="Sprite2D8" type="Sprite2D" parent="."]
-position = Vector2(-231, 27)
-texture = ExtResource("1_6snvh")
-
-[node name="Sprite2D9" type="Sprite2D" parent="."]
-position = Vector2(177, -41)
-texture = ExtResource("1_6snvh")
+[node name="GenerationTimer" type="Timer" parent="."]
