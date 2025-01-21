@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 # Parameters
@@ -17,11 +18,13 @@ extends Node2D
 # Data
 
 var half_bounds : Vector2;
+var count : int;
 
 
 # Components
 
 @onready var GenerationTimer : Timer = $GenerationTimer;
+@onready var Things : Node2D = $GeneratedThings;
 
 
 # Processes
@@ -31,6 +34,7 @@ func _ready() -> void:
 	randomize();
 	
 	half_bounds = Bounds * .5;
+	reset();
 	
 	if(!Timed):
 		var i : int = 0;
@@ -38,12 +42,26 @@ func _ready() -> void:
 			create_thing();
 			i += 1;
 	else:
+		
+		GenerationTimer.wait_time = CreationLength / 10000;
+		GenerationTimer.start();
+		
 		pass;
 
 
 # Functions
 
+func reset() -> void:
+	count = 0;
+	
+	var children : Array[Node] = Things.get_children();
+	for item in children:
+		Things.remove_child(item);
+
 func create_thing() -> void:
+	
+	if(count >= 10000):
+		reset();
 	
 	var thing : Node = DuplicationThing.instantiate();
 	
@@ -56,4 +74,6 @@ func create_thing() -> void:
 		
 		thing.modulate = Color(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1), randf_range(0.5, 1));
 	
-	add_child(thing);
+	Things.add_child(thing);
+	
+	count += 1;

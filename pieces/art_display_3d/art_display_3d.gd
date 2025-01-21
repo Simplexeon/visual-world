@@ -58,8 +58,9 @@ func create_piece(scene : PackedScene) -> void:
 	for child in window_children:
 		DisplayWindow.remove_child(child);
 	
-	var node : Node = ArtPiece.instantiate();
-	DisplayWindow.add_child(node);
-	
-	if(node is Node2D):
-		node.global_position = Size * .5;
+	if(ArtPiece != null):
+		var node : Node = ArtPiece.instantiate();
+		DisplayWindow.add_child(node);
+		
+		if(node is Node2D):
+			node.global_position = Size * .5;

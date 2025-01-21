@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://fnnahimtwfap"]
+[gd_scene load_steps=8 format=3 uid="uid://fnnahimtwfap"]
 
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_miht2"]
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="2_r5r4s"]
 [ext_resource type="PackedScene" uid="uid://cpryxfj87j1jg" path="res://pieces/art_display_3d/art_display_3d.tscn" id="3_wkk5x"]
 [ext_resource type="PackedScene" uid="uid://csdn0tiq77b3o" path="res://pieces/10000_things/10000_things.tscn" id="4_487vk"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ijv68"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_4uxt2"]
 viewport_path = NodePath("DisplayWindow")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_53k4p"]
+viewport_path = NodePath("DisplayWindow")
+
+[sub_resource type="CameraTexture" id="CameraTexture_f1rjg"]
 
 [node name="Main" type="Node3D"]
 
@@ -516,6 +521,27 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0.89452, -7.19529)
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_ijv68")
+texture = SubResource("ViewportTexture_4uxt2")
 ArtPiece = ExtResource("4_487vk")
+Size = Vector2(600, 600)
+
+[node name="Title" type="Label3D" parent="Displays/10000 Things"]
+transform = Transform3D(-1.94442, 0, 8.74228e-08, 0, 1.94442, 0, -1.69987e-07, 0, -1, 0, 3.61914, 0)
+text = "10,000 Things"
+font_size = 64
+outline_size = 18
+
+[node name="NewThing" parent="Displays" instance=ExtResource("3_wkk5x")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -0.953189)
+texture = SubResource("ViewportTexture_53k4p")
 Size = Vector2(700, 600)
+
+[node name="Title" type="Label3D" parent="Displays/NewThing"]
+transform = Transform3D(-1.94442, 0, 8.74228e-08, 0, 1.94442, 0, -1.69987e-07, 0, -1, -0.0737913, 3.61914, 0)
+text = "WIP"
+font_size = 64
+outline_size = 18
+
+[node name="Sprite3D" type="Sprite3D" parent="Displays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21375, 4.17662, -0.973953)
+texture = SubResource("CameraTexture_f1rjg")
