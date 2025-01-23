@@ -25,6 +25,7 @@ func _input(event: InputEvent) -> void:
 		var motion : Vector2 = event.screen_relative;
 		rotate_y(deg_to_rad(motion.x * MouseSens * -1));
 		Camera.rotate_x(deg_to_rad(motion.y * MouseSens * -1));
+		PlayerInfo.playerCameraRot = Camera.global_basis.get_rotation_quaternion();
 		
 	
 	if(event.is_action_pressed("ui_cancel")):

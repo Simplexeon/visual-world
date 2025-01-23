@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b46s5g7858kra" path="res://pieces/portal_display_3d/portal_display_3d.tscn" id="5_cyjwt"]
 [ext_resource type="PackedScene" uid="uid://dxsex67syigyi" path="res://pieces/dimension/dimension.tscn" id="6_nlfcx"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fo4uo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_u524l"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ohyxw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_a0471"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -521,7 +521,7 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0.89452, -7.19529)
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_fo4uo")
+texture = SubResource("ViewportTexture_u524l")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 
@@ -533,7 +533,7 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_ohyxw")
+texture = SubResource("ViewportTexture_a0471")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)

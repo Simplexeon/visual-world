@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://pieces/art_display_3d/art_display_3d.gd" id="1_brr27"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5ipr6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_jfupc"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="ArtDisplay3D" type="Sprite3D"]
-texture = SubResource("ViewportTexture_5ipr6")
+texture = SubResource("ViewportTexture_jfupc")
 script = ExtResource("1_brr27")
 
 [node name="DisplayWindow" type="SubViewport" parent="."]

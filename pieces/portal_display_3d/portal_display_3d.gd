@@ -31,8 +31,13 @@ func _physics_process(delta: float) -> void:
 	if(camera == null):
 		return;
 	
-	var modifiedPos = PlayerInfo.playerPos * rotation_quat;
-	camera.global_position = global_position - modifiedPos;
+	camera.position = (PlayerInfo.playerPos - global_position).project(Vector3.RIGHT);
+	
+	var camera_target_aim : Vector3 = (global_position - PlayerInfo.playerPos).normalized();
+	camera_target_aim.y = camera.global_position.y;
+	camera_target_aim.x *= -1;
+	
+	camera.quaternion = Basis.looking_at(camera_target_aim, Vector3.UP, true).get_rotation_quaternion();
 
 
 # Functions
@@ -43,7 +48,7 @@ func create_piece(scene : PackedScene) -> void:
 	if(displayedPiece != null):
 		
 		if(displayedPiece is Node3D):
-			displayedPiece.global_basis = global_basis;
+			displayedPiece.global_basis = global_basis.rotated(Vector3.UP, PI);
 		
 		var possibleCamera = displayedPiece.get_node("Camera3D");
 		if(possibleCamera != null):
