@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpryxfj87j1jg"]
+[gd_scene load_steps=3 format=3 uid="uid://cpryxfj87j1jg"]
 
 [ext_resource type="Script" path="res://pieces/art_display_3d/art_display_3d.gd" id="1_brr27"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_5ipr6"]
+viewport_path = NodePath("DisplayWindow")
+
 [node name="ArtDisplay3D" type="Sprite3D"]
+texture = SubResource("ViewportTexture_5ipr6")
 script = ExtResource("1_brr27")
 
 [node name="DisplayWindow" type="SubViewport" parent="."]

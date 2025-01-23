@@ -33,6 +33,12 @@ class_name ArtDisplay3D
 			
 
 
+# Data
+
+var displayedPiece : Node;
+
+
+
 # Components
 
 @onready var DisplayWindow : SubViewport = $DisplayWindow;
@@ -42,10 +48,8 @@ class_name ArtDisplay3D
 
 func _ready() -> void:
 	
-	if(!Engine.is_editor_hint()):
-		create_piece(ArtPiece);
-		
-		Size = Size;
+	create_piece(ArtPiece);
+	Size = Size;
 	
 	texture = DisplayWindow.get_texture();
 	
@@ -61,6 +65,8 @@ func create_piece(scene : PackedScene) -> void:
 	if(ArtPiece != null):
 		var node : Node = ArtPiece.instantiate();
 		DisplayWindow.add_child(node);
+		displayedPiece = node;
 		
 		if(node is Node2D):
 			node.global_position = Size * .5;
+		

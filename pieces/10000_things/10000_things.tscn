@@ -11,6 +11,7 @@ MaxSize = 1.5
 Timed = true
 
 [node name="GenerationTimer" type="Timer" parent="."]
+wait_time = 0.002
 
 [node name="GeneratedThings" type="Node2D" parent="."]
 
