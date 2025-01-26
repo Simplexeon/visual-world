@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fnnahimtwfap"]
+[gd_scene load_steps=11 format=3 uid="uid://fnnahimtwfap"]
 
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_miht2"]
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="2_r5r4s"]
@@ -6,11 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://csdn0tiq77b3o" path="res://pieces/10000_things/10000_things.tscn" id="4_487vk"]
 [ext_resource type="PackedScene" uid="uid://b46s5g7858kra" path="res://pieces/portal_display_3d/portal_display_3d.tscn" id="5_cyjwt"]
 [ext_resource type="PackedScene" uid="uid://dxsex67syigyi" path="res://pieces/dimension/dimension.tscn" id="6_nlfcx"]
+[ext_resource type="PackedScene" uid="uid://dxo1t2uy0rjuf" path="res://pieces/mythical_particles/mythical_particles.tscn" id="7_p74em"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u524l"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8t6tr"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_a0471"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_058ew"]
+viewport_path = NodePath("DisplayWindow")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vtnyd"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -521,7 +525,7 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0.89452, -7.19529)
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_u524l")
+texture = SubResource("ViewportTexture_8t6tr")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 
@@ -533,7 +537,7 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_a0471")
+texture = SubResource("ViewportTexture_058ew")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
@@ -541,6 +545,19 @@ Size = Vector2(640, 512)
 [node name="Title2" type="Label3D" parent="Displays/Dimension"]
 transform = Transform3D(-1.94442, 0, -8.74228e-08, 0, 1.94442, 0, 1.69987e-07, 0, -1, -0.0822773, 2.95838, 0)
 text = "Dimension
+"
+font_size = 64
+outline_size = 18
+
+[node name="Dimension2" parent="Displays" instance=ExtResource("5_cyjwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
+texture = SubResource("ViewportTexture_vtnyd")
+ArtPiece = ExtResource("7_p74em")
+Size = Vector2(1000, 650)
+
+[node name="Title2" type="Label3D" parent="Displays/Dimension2"]
+transform = Transform3D(-1.94442, 0, -8.74228e-08, 0, 1.94442, 0, 1.69987e-07, 0, -1, -0.0822773, 3.81938, 0)
+text = "Mythical Particles
 "
 font_size = 64
 outline_size = 18
