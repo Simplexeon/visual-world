@@ -169,10 +169,11 @@ draw_pass_1 = SubResource("SphereMesh_cujrq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.81916)
 
 [node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-strength = 21.84
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71599, 12.1336, -0.359676)
+strength = 42.0
 attenuation = 0.435275
 directionality = 0.5
-radius = 42.0
+radius = 15.0
 script = ExtResource("1_ij8dh")
 MovementNoise = SubResource("NoiseTexture3D_1drb0")
 HalfBounds = Vector3(16, 16, 4)
@@ -180,12 +181,14 @@ Strength = Vector2(10, 50)
 MoveTime = 5.0
 
 [node name="NewLocationTimer" type="Timer" parent="Attractors/GPUParticlesAttractorSphere3D"]
+wait_time = 5.0
 
 [node name="GPUParticlesAttractorSphere3D2" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-strength = 21.84
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82334, -11.5909, -0.0266105)
+strength = 37.6078
 attenuation = 0.435275
 directionality = 0.5
-radius = 42.0
+radius = 15.0
 script = ExtResource("1_ij8dh")
 MovementNoise = SubResource("NoiseTexture3D_jwdxh")
 HalfBounds = Vector3(16, 16, 4)
@@ -193,12 +196,14 @@ Strength = Vector2(10, 50)
 MoveTime = 5.0
 
 [node name="NewLocationTimer" type="Timer" parent="Attractors/GPUParticlesAttractorSphere3D2"]
+wait_time = 5.0
 
 [node name="GPUParticlesAttractorSphere3D3" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-strength = 21.84
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5802, 13.7621, -1.28028)
+strength = 35.2549
 attenuation = 0.435275
 directionality = 0.5
-radius = 42.0
+radius = 15.0
 script = ExtResource("1_ij8dh")
 MovementNoise = SubResource("NoiseTexture3D_0u4a1")
 HalfBounds = Vector3(16, 16, 4)
@@ -206,6 +211,7 @@ Strength = Vector2(10, 50)
 MoveTime = 5.0
 
 [node name="NewLocationTimer" type="Timer" parent="Attractors/GPUParticlesAttractorSphere3D3"]
+wait_time = 5.0
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149709, -16.0737, -12.0183)
