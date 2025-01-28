@@ -40,6 +40,9 @@ func _physics_process(delta: float) -> void:
 		var z_pos : int = int(floorf(lerpf(0, MovementNoise.depth, (position.z + HalfBounds.z) / (HalfBounds.z * 2))));
 		var x_pos : int = int(floorf(lerpf(0, MovementNoise.depth, (position.x + HalfBounds.x) / (HalfBounds.x * 2))));
 		var y_pos : int = int(floorf(lerpf(0, MovementNoise.depth, (position.y + HalfBounds.y) / (HalfBounds.y * 2))));
+		z_pos = clampi(z_pos, 0, MovementNoise.depth - 1);
+		x_pos = clampi(x_pos, 0, MovementNoise.depth - 1);
+		y_pos = clampi(y_pos, 0, MovementNoise.depth - 1);
 		var value : Color = noise_value[z_pos].get_pixel(x_pos, y_pos);
 		strength = lerpf(Strength.x, Strength.y, value.v);
 

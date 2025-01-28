@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dxsex67syigyi" path="res://pieces/dimension/dimension.tscn" id="6_nlfcx"]
 [ext_resource type="PackedScene" uid="uid://dxo1t2uy0rjuf" path="res://pieces/mythical_particles/mythical_particles.tscn" id="7_p74em"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1p5a3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rb8d2"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ivd8o"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7doxn"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7o382"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bybyd"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -526,7 +526,7 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_1p5a3")
+texture = SubResource("ViewportTexture_rb8d2")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 
@@ -538,8 +538,9 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_ivd8o")
+texture = SubResource("ViewportTexture_7doxn")
 TransparentBackground = true
+MovementScaling = 1.0
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
 
@@ -550,15 +551,16 @@ text = "Dimension
 font_size = 64
 outline_size = 18
 
-[node name="MythicalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
+[node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_7o382")
+texture = SubResource("ViewportTexture_bybyd")
+MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)
 
-[node name="Title2" type="Label3D" parent="Displays/MythicalParticles"]
+[node name="Title2" type="Label3D" parent="Displays/MysticalParticles"]
 transform = Transform3D(-1.94442, 0, -8.74228e-08, 0, 1.94442, 0, 1.69987e-07, 0, -1, -0.0822773, 3.81938, 0)
-text = "Mythical Particles
+text = "Mystical Particles
 "
 font_size = 64
 outline_size = 18

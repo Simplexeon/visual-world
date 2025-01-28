@@ -11,6 +11,7 @@ class_name PortalDisplay3D
 		if(is_node_ready()):
 			DisplayWindow.transparent_bg = value;
 
+@export var MovementScaling : float = 1.0;
 
 # Data
 
@@ -31,7 +32,8 @@ func _physics_process(delta: float) -> void:
 	if(camera == null):
 		return;
 	
-	camera.position = (PlayerInfo.playerPos - global_position).project(Vector3.RIGHT);
+	var moveAmount : Vector3 = (PlayerInfo.playerPos - global_position) * MovementScaling;
+	camera.position = (moveAmount).project(Vector3.RIGHT);
 	
 	var camera_target_aim : Vector3 = (global_position - PlayerInfo.playerPos).normalized();
 	camera_target_aim.y = camera.global_position.y;

@@ -46,7 +46,7 @@ curve = SubResource("Curve_1g1fa")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vmixq"]
 emission_shape = 1
-emission_sphere_radius = 12.0
+emission_sphere_radius = 48.57
 direction = Vector3(0, 1, 0)
 initial_velocity_min = 5.0
 initial_velocity_max = 20.0
@@ -154,29 +154,29 @@ environment = SubResource("Environment_amd1t")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.1075)
-amount = 50
+amount = 500
 lifetime = 5.0
 explosiveness = 0.24
 randomness = 0.16
 fixed_fps = 60
 collision_base_size = 0.4
-visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
+visibility_aabb = AABB(-40, -40, -20, 80, 80, 40)
 draw_order = 2
 process_material = SubResource("ParticleProcessMaterial_vmixq")
 draw_pass_1 = SubResource("SphereMesh_cujrq")
 
 [node name="Attractors" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.81916)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.0751)
 
 [node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71599, 12.1336, -0.359676)
-strength = 42.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6527, 17.97, -2.8932)
+strength = 26.7843
 attenuation = 0.435275
 directionality = 0.5
 radius = 15.0
 script = ExtResource("1_ij8dh")
 MovementNoise = SubResource("NoiseTexture3D_1drb0")
-HalfBounds = Vector3(16, 16, 4)
+HalfBounds = Vector3(20, 20, 4)
 Strength = Vector2(10, 50)
 MoveTime = 5.0
 
@@ -184,14 +184,14 @@ MoveTime = 5.0
 wait_time = 5.0
 
 [node name="GPUParticlesAttractorSphere3D2" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82334, -11.5909, -0.0266105)
-strength = 37.6078
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89228, -8.61281, 1.03196)
+strength = 34.7843
 attenuation = 0.435275
 directionality = 0.5
 radius = 15.0
 script = ExtResource("1_ij8dh")
 MovementNoise = SubResource("NoiseTexture3D_jwdxh")
-HalfBounds = Vector3(16, 16, 4)
+HalfBounds = Vector3(20, 20, 4)
 Strength = Vector2(10, 50)
 MoveTime = 5.0
 
@@ -199,14 +199,14 @@ MoveTime = 5.0
 wait_time = 5.0
 
 [node name="GPUParticlesAttractorSphere3D3" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5802, 13.7621, -1.28028)
-strength = 35.2549
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41365, 3.67285, 3.37592)
+strength = 43.4118
 attenuation = 0.435275
 directionality = 0.5
 radius = 15.0
 script = ExtResource("1_ij8dh")
 MovementNoise = SubResource("NoiseTexture3D_0u4a1")
-HalfBounds = Vector3(16, 16, 4)
+HalfBounds = Vector3(20, 20, 4)
 Strength = Vector2(10, 50)
 MoveTime = 5.0
 
@@ -214,25 +214,25 @@ MoveTime = 5.0
 wait_time = 5.0
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149709, -16.0737, -12.0183)
-size = Vector3(39.1669, 2, 39.7998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66001, -24.4183, -12.0183)
+size = Vector3(98.7409, 2, 39.7998)
 
 [node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149709, 15.4981, -12.0183)
-size = Vector3(39.1669, 2, 39.7998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72324, 20.0772, -12.0183)
+size = Vector3(117.382, 2, 39.7998)
 
 [node name="GPUParticlesCollisionBox3D3" type="GPUParticlesCollisionBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.405055, 2.39449, -36.677)
-size = Vector3(68.3905, 47.7519, 10.8193)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.405055, 1.32441, -39.6178)
+size = Vector3(68.3905, 63.5513, 10.8193)
 
 [node name="GPUParticlesCollisionBox3D4" type="GPUParticlesCollisionBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08059, 0.299217, 12.2485)
 size = Vector3(67.5218, 46.4214, 11.2168)
 
 [node name="GPUParticlesCollisionBox3D5" type="GPUParticlesCollisionBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4046, 0.440849, -12.0932)
-size = Vector3(16.4953, 42.7888, 46.699)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8934, 0.485859, -12.0932)
+size = Vector3(16.4953, 57.2297, 46.699)
 
 [node name="GPUParticlesCollisionBox3D6" type="GPUParticlesCollisionBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5246, 0.762138, -14.3879)
-size = Vector3(15.4508, 39.8225, 56.7745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.9486, -1.61619, -14.3879)
+size = Vector3(15.4508, 47.4094, 56.7745)
