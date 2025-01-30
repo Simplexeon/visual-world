@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://dclnd7itdf7pb"]
 
-[ext_resource type="Script" path="res://pieces/flow/FieldObject.gd" id="1_i5wyi"]
+[ext_resource type="Script" path="res://pieces/flow/rod_line.gd" id="1_mnpbq"]
 
 [node name="Shape" type="Node3D"]
-script = ExtResource("1_i5wyi")
+script = ExtResource("1_mnpbq")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.568912)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 radius = 0.0490438
-height = 1.1002
+height = 1.82973

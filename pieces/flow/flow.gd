@@ -16,13 +16,21 @@ extends Node3D
 
 var grid : Array[Array] = [];
 var setup : bool = false;
+var rangeSquared : float;
 
 
 class Point:
 	
 	var vector : Vector3;
 	
+	var visibility : float = 1.0 :
+		set(value):
+			visibility = value;
+			if(node != null):
+				node.SetTransparency(visibility);
+	
 	var node : FieldObject;
+	
 
 
 # Components
@@ -33,6 +41,9 @@ class Point:
 # Processes
 
 func _ready() -> void:
+	
+	PlayerRadius.sample_baked(0.0);
+	rangeSquared = pow(MaxPlayerRange, 2.0);
 	
 	await RotationNoise.changed;
 	
@@ -69,33 +80,18 @@ func _physics_process(delta: float) -> void:
 	if(!setup):
 		return;
 	
-	#var i : int = 0;
-	#while(i < GridCount):
-	#	var j : int = 0;
-	#	while(j < GridCount):
-	#		var k : int = 0;
-	#		while(k < GridCount):
-	#			
-	#			UpdatePoint(delta, grid[i][j][k]);
-	#			
-	#			k += 1;
-	#		
-	#		j += 1;
-	#	
-	#	i += 1;
+	for x in grid:
+		for y in x:
+			for point in y:
+				UpdatePoint(delta, point);
+				
 
 func UpdatePoint(_delta : float, point : Point) -> void:
 	
 	var playerVect : Vector3 = point.node.global_position - PlayerInfo.playerPos;
-	var playerQuat : Quaternion = Quaternion(Vector3.UP, playerVect.normalized());
-	var playerRange : float = min(Utils.MapFloat(Vector2(0, MaxPlayerRange), Vector2.DOWN, 
-		playerVect.length()), 1.0);
+	var playerRange : float = min(remap(playerVect.length_squared(), 0, rangeSquared, 0, 1), 1.0);
 	
-	var rotQuat : Quaternion = Quaternion(Vector3.UP, point.vector).slerp(playerQuat, playerRange);
-	
-	point.node.look_at(point.node.global_position + (rotQuat * point.vector));
-	
-	pass;
+	point.visibility = PlayerRadius.sample_baked(playerRange);
 
 
 # Functions
@@ -104,14 +100,12 @@ func CreateGridPoint(_position : Vector3) -> Point:
 	
 	var result : Point = Point.new();
 	
-	var noiseBounds : Vector2 = Vector2(0, GridCount);
-	
-	var rot : float = Utils.SampleNoise3D(Vector3(Utils.MapFloat(noiseBounds, Vector2.DOWN, _position.x), 
-		Utils.MapFloat(noiseBounds, Vector2.DOWN, _position.y),
-		Utils.MapFloat(noiseBounds, Vector2.DOWN, _position.z)), RotationNoise).v;
+	var rot : float = Utils.SampleNoise3D(Vector3(remap(_position.x, 0, GridCount, 0, 1), 
+		remap(_position.y, 0, GridCount, 0, 1),
+		remap(_position.z, 0, GridCount, 0, 1)), RotationNoise).v;
 	
 	var lookVector : Vector3 = Vector3.UP;
-	rot = Utils.MapFloat(Vector2.DOWN, Vector2(0, 2 * PI), rot);
+	rot = remap(rot, 0, 1, 0, 2 * PI);
 	lookVector = lookVector.rotated(Vector3.RIGHT, rot);
 	lookVector = lookVector.rotated(Vector3.FORWARD, rot);
 	
