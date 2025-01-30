@@ -15,6 +15,9 @@ class_name Player3D
 
 # Processes
 
+func _ready() -> void:
+	PlayerInfo.playerPos = Camera.global_position;
+
 func _input(event: InputEvent) -> void:
 	
 	if(event is InputEventMouseButton):

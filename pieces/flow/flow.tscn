@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b81ksftj562xg"]
+[gd_scene load_steps=8 format=3 uid="uid://b81ksftj562xg"]
 
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="1_ka0lj"]
 [ext_resource type="Script" path="res://pieces/flow/flow.gd" id="1_kxc77"]
@@ -17,8 +17,12 @@ width = 128
 height = 128
 depth = 128
 seamless = true
-seamless_blend_skirt = 0.678
+seamless_blend_skirt = 0.163
 noise = SubResource("FastNoiseLite_v6lr6")
+
+[sub_resource type="Curve" id="Curve_olfch"]
+_data = [Vector2(0, 0.879121), 0.0, 0.0, 0, 0, Vector2(0.191176, 0.340659), -1.83417, -1.83417, 0, 0, Vector2(0.485294, 0.120879), -0.511278, -0.511278, 0, 0, Vector2(0.845588, 0), -0.20196, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lux51"]
 
@@ -27,6 +31,8 @@ script = ExtResource("1_kxc77")
 GridCount = 20
 DrawObject = ExtResource("3_setau")
 RotationNoise = SubResource("NoiseTexture3D_5tc3v")
+PlayerRadius = SubResource("Curve_olfch")
+MaxPlayerRange = 10.0
 
 [node name="Player" parent="." instance=ExtResource("1_ka0lj")]
 
