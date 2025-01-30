@@ -31,6 +31,8 @@ class Point:
 
 func _ready() -> void:
 	
+	await RotationNoise.changed;
+	
 	var i : int = 0;
 	while(i < GridCount):
 		
@@ -67,16 +69,14 @@ func CreateGridPoint(_position : Vector3) -> Point:
 	
 	var result : Point = Point.new();
 	
-	var xBounds : Vector2 = Vector2(FieldBounds.x * -1, FieldBounds.x);
-	var yBounds : Vector2 = Vector2(FieldBounds.y * -1, FieldBounds.y);
-	var zBounds : Vector2 = Vector2(FieldBounds.z * -1, FieldBounds.z);
+	var noiseBounds : Vector2 = Vector2(0, GridCount);
 	
-	var rot : float = Utils.SampleNoise3D(Vector3(Utils.MapFloat(xBounds, Vector2.UP, _position.x), 
-		Utils.MapFloat(yBounds, Vector2.UP, _position.y),
-		Utils.MapFloat(zBounds, Vector2.UP, _position.z)), RotationNoise).v;
+	var rot : float = Utils.SampleNoise3D(Vector3(Utils.MapFloat(noiseBounds, Vector2.DOWN, _position.x), 
+		Utils.MapFloat(noiseBounds, Vector2.DOWN, _position.y),
+		Utils.MapFloat(noiseBounds, Vector2.DOWN, _position.z)), RotationNoise).v;
 	
 	var lookVector : Vector3 = Vector3.UP;
-	rot = Utils.MapFloat(Vector2.UP, Vector2(0, 2 * PI), rot);
+	rot = Utils.MapFloat(Vector2.DOWN, Vector2(0, 2 * PI), rot);
 	lookVector = lookVector.rotated(Vector3.RIGHT, rot);
 	result.vector = lookVector.rotated(Vector3.FORWARD, rot);
 	
@@ -108,7 +108,8 @@ func SetupField() -> void:
 				Generation.add_child(inst);
 				inst.global_position = drawPos;
 				
-				inst.look_at_from_position(inst.global_position, inst.global_position + point.vector);
+				if(point.vector != Vector3.UP):
+					inst.look_at_from_position(inst.global_position, inst.global_position + point.vector);
 				
 				point.node = inst;
 				

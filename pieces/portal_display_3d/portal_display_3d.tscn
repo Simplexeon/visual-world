@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://pieces/portal_display_3d/portal_display_3d.gd" id="1_ppdk8"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_to51c"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_awtl0"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="PortalDisplay3D" type="Sprite3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51587, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_to51c")
+texture = SubResource("ViewportTexture_awtl0")
 script = ExtResource("1_ppdk8")
 
 [node name="DisplayWindow" type="SubViewport" parent="."]

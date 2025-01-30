@@ -2,9 +2,9 @@ extends Node
 
 func MapFloat(from : Vector2, to : Vector2, amount : float) -> float:
 	
-	var initialAmount = (amount + from.x) / (from.y + from.x);
+	var initialAmount : float = (amount + abs(from.x)) / (from.y + abs(from.x));
 	
-	return (to.y + to.x) * amount - to.x;
+	return (to.y + abs(to.x)) * initialAmount - abs(to.x);
 
 
 func SampleNoise3D(normalized_pos : Vector3, noise3D : NoiseTexture3D) -> Color:
