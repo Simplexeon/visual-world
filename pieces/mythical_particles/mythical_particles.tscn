@@ -169,8 +169,8 @@ draw_pass_1 = SubResource("SphereMesh_cujrq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.0751)
 
 [node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6527, 17.97, -2.8932)
-strength = 26.7843
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5583, 3.94696, -2.39827)
+strength = 31.6471
 attenuation = 0.435275
 directionality = 0.5
 radius = 15.0
@@ -184,8 +184,8 @@ MoveTime = 5.0
 wait_time = 5.0
 
 [node name="GPUParticlesAttractorSphere3D2" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89228, -8.61281, 1.03196)
-strength = 34.7843
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8351, -5.36403, 2.59179)
+strength = 29.451
 attenuation = 0.435275
 directionality = 0.5
 radius = 15.0
@@ -199,8 +199,8 @@ MoveTime = 5.0
 wait_time = 5.0
 
 [node name="GPUParticlesAttractorSphere3D3" type="GPUParticlesAttractorSphere3D" parent="Attractors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41365, 3.67285, 3.37592)
-strength = 43.4118
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1382, 11.524, -3.08888)
+strength = 40.5882
 attenuation = 0.435275
 directionality = 0.5
 radius = 15.0
