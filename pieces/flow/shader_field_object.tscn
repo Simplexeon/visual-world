@@ -16,6 +16,7 @@ size = Vector2(0.5, 0.5)
 
 [node name="ShaderFieldObject" type="Node3D"]
 script = ExtResource("1_spvly")
+PositionAmp = 999.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_h5lse")

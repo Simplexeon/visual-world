@@ -1,5 +1,10 @@
 extends FieldObject
 
+# Parameters
+
+@export var PositionAmp : float;
+
+
 # Components
 
 @onready var CircleMesh : MeshInstance3D = $MeshInstance3D;
@@ -18,4 +23,4 @@ func _ready() -> void:
 func UpdateData(weight : float, pos : Vector3) -> void:
 	
 	TrigShader.set_shader_parameter(&"weight", weight);
-	TrigShader.set_shader_parameter(&"position", pos);
+	TrigShader.set_shader_parameter(&"position", pos * PositionAmp);

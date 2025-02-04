@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b81ksftj562xg"]
+[gd_scene load_steps=5 format=3 uid="uid://b81ksftj562xg"]
 
 [ext_resource type="Script" path="res://pieces/flow/flow.gd" id="1_kxc77"]
 [ext_resource type="PackedScene" uid="uid://55rrjroalyi" path="res://pieces/flow/shader_field_object.tscn" id="2_n7l0a"]
@@ -18,8 +18,6 @@ seamless = true
 seamless_blend_skirt = 0.163
 noise = SubResource("FastNoiseLite_v6lr6")
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lux51"]
-
 [node name="Flow" type="Node3D"]
 script = ExtResource("1_kxc77")
 FieldBounds = Vector3(10, 10, 10)
@@ -27,12 +25,5 @@ GridCount = 20
 DrawObject = ExtResource("2_n7l0a")
 RotationNoise = SubResource("NoiseTexture3D_5tc3v")
 MaxPlayerRange = 7.0
-
-[node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.56554, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.432782, 0)
-shape = SubResource("WorldBoundaryShape3D_lux51")
 
 [node name="Generation" type="Node3D" parent="."]
