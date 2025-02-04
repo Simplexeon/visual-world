@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dxo1t2uy0rjuf" path="res://pieces/mythical_particles/mythical_particles.tscn" id="7_p74em"]
 [ext_resource type="PackedScene" uid="uid://b81ksftj562xg" path="res://pieces/flow/flow.tscn" id="8_6c05i"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_aqp7l"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_g2mvd"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8oa6y"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rxokq"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ek724"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_435yf"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -527,7 +527,7 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_aqp7l")
+texture = SubResource("ViewportTexture_g2mvd")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 
@@ -539,7 +539,7 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_8oa6y")
+texture = SubResource("ViewportTexture_rxokq")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
@@ -553,7 +553,7 @@ outline_size = 18
 
 [node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_ek724")
+texture = SubResource("ViewportTexture_435yf")
 MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)

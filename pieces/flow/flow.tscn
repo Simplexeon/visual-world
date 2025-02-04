@@ -6,8 +6,7 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_v6lr6"]
 noise_type = 3
 frequency = 0.0169
-fractal_type = 0
-fractal_octaves = 1
+fractal_octaves = 2
 fractal_lacunarity = 0.0
 fractal_ping_pong_strength = 4.0
 
