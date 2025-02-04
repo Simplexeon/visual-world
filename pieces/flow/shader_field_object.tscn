@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://55rrjroalyi"]
+
+[ext_resource type="Shader" path="res://pieces/flow/shader_field_object.gdshader" id="1_o2opc"]
+[ext_resource type="Script" path="res://pieces/flow/shader_field_object.gd" id="1_spvly"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rny2v"]
+render_priority = 0
+shader = ExtResource("1_o2opc")
+shader_parameter/amplifier = null
+shader_parameter/weight = null
+shader_parameter/position = null
+
+[sub_resource type="QuadMesh" id="QuadMesh_h5lse"]
+material = SubResource("ShaderMaterial_rny2v")
+size = Vector2(0.5, 0.5)
+
+[node name="ShaderFieldObject" type="Node3D"]
+script = ExtResource("1_spvly")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_h5lse")

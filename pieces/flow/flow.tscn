@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b81ksftj562xg"]
+[gd_scene load_steps=6 format=3 uid="uid://b81ksftj562xg"]
 
-[ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="1_ka0lj"]
 [ext_resource type="Script" path="res://pieces/flow/flow.gd" id="1_kxc77"]
-[ext_resource type="PackedScene" uid="uid://dclnd7itdf7pb" path="res://pieces/flow/rod_line.tscn" id="3_setau"]
+[ext_resource type="PackedScene" uid="uid://55rrjroalyi" path="res://pieces/flow/shader_field_object.tscn" id="2_n7l0a"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_v6lr6"]
 noise_type = 3
@@ -20,22 +19,15 @@ seamless = true
 seamless_blend_skirt = 0.163
 noise = SubResource("FastNoiseLite_v6lr6")
 
-[sub_resource type="Curve" id="Curve_olfch"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.222826, 0.717647), -0.936089, -0.936089, 0, 0, Vector2(0.548913, 0.4), -0.85042, -0.85042, 0, 0, Vector2(0.956522, 0), -0.20196, 0.0, 0, 0]
-point_count = 4
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lux51"]
 
 [node name="Flow" type="Node3D"]
 script = ExtResource("1_kxc77")
 FieldBounds = Vector3(10, 10, 10)
-GridCount = 12
-DrawObject = ExtResource("3_setau")
+GridCount = 20
+DrawObject = ExtResource("2_n7l0a")
 RotationNoise = SubResource("NoiseTexture3D_5tc3v")
-PlayerRadius = SubResource("Curve_olfch")
 MaxPlayerRange = 7.0
-
-[node name="Player" parent="." instance=ExtResource("1_ka0lj")]
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.56554, 0)
@@ -43,10 +35,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.56554, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.432782, 0)
 shape = SubResource("WorldBoundaryShape3D_lux51")
-
-[node name="Lighting" type="Node3D" parent="."]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7, 7)
 
 [node name="Generation" type="Node3D" parent="."]

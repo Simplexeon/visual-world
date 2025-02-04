@@ -1,3 +1,4 @@
+@tool
 extends Node3D
 
 
@@ -22,6 +23,7 @@ var rangeSquared : float;
 class Point:
 	
 	var vector : Vector3;
+	var weight : float;
 	
 	var visibility : float = 1.0 :
 		set(value):
@@ -42,7 +44,7 @@ class Point:
 
 func _ready() -> void:
 	
-	PlayerRadius.sample_baked(0.0);
+	#PlayerRadius.sample_baked(0.0);
 	rangeSquared = pow(MaxPlayerRange, 2.0);
 	
 	await RotationNoise.changed;
@@ -75,23 +77,23 @@ func _ready() -> void:
 	setup = true;
 
 
-func _physics_process(delta: float) -> void:
-	
-	if(!setup):
-		return;
-	
-	for x in grid:
-		for y in x:
-			for point in y:
-				UpdatePoint(delta, point);
-				
-
-func UpdatePoint(_delta : float, point : Point) -> void:
-	
-	var playerVect : Vector3 = point.node.global_position - PlayerInfo.playerPos;
-	var playerRange : float = min(remap(playerVect.length_squared(), 0, rangeSquared, 0, 1), 1.0);
-	
-	point.visibility = PlayerRadius.sample_baked(playerRange);
+#func _physics_process(delta: float) -> void:
+#	
+#	if(!setup):
+#		return;
+#	
+#	for x in grid:
+#		for y in x:
+#			for point in y:
+#				UpdatePoint(delta, point);
+#				
+#
+#func UpdatePoint(_delta : float, point : Point) -> void:
+#	
+#	var playerVect : Vector3 = point.node.global_position - PlayerInfo.playerPos;
+#	var playerRange : float = min(remap(playerVect.length_squared(), 0, rangeSquared, 0, 1), 1.0);
+#	
+#	point.visibility = PlayerRadius.sample_baked(playerRange);
 
 
 # Functions
@@ -103,6 +105,8 @@ func CreateGridPoint(_position : Vector3) -> Point:
 	var rot : float = Utils.SampleNoise3D(Vector3(remap(_position.x, 0, GridCount, 0, 1), 
 		remap(_position.y, 0, GridCount, 0, 1),
 		remap(_position.z, 0, GridCount, 0, 1)), RotationNoise).v;
+	
+	result.weight = rot;
 	
 	var lookVector : Vector3 = Vector3.UP;
 	rot = remap(rot, 0, 1, 0, 2 * PI);
@@ -139,6 +143,7 @@ func SetupField() -> void:
 				var inst : Node3D = DrawObject.instantiate();
 				Generation.add_child(inst);
 				inst.global_position = drawPos;
+				inst.UpdateData(point.weight, Vector3(i, j, k));
 				
 				if(point.vector != Vector3.UP):
 					inst.look_at_from_position(inst.global_position, inst.global_position + point.vector);

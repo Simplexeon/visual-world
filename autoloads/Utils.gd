@@ -1,3 +1,4 @@
+@tool
 extends Node
 
 func MapFloat(from : Vector2, to : Vector2, amount : float) -> float:
