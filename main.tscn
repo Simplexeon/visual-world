@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dxo1t2uy0rjuf" path="res://pieces/mythical_particles/mythical_particles.tscn" id="7_p74em"]
 [ext_resource type="PackedScene" uid="uid://b81ksftj562xg" path="res://pieces/flow/flow.tscn" id="8_6c05i"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hgkgd"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xdj86"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bvfuq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1htx1"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_sbt4w"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yfjch"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -527,9 +527,11 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_hgkgd")
+texture = SubResource("ViewportTexture_xdj86")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
+ClearMode = 1
+UpdateMode = 1
 
 [node name="Title" type="Label3D" parent="Displays/10000 Things"]
 transform = Transform3D(-1.94442, 0, 8.74228e-08, 0, 1.94442, 0, -1.69987e-07, 0, -1, 0, 3.61914, 0)
@@ -539,10 +541,12 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_bvfuq")
+texture = SubResource("ViewportTexture_1htx1")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
+ClearMode = 0
+UpdateMode = 2
 
 [node name="Title2" type="Label3D" parent="Displays/Dimension"]
 transform = Transform3D(-1.94442, 0, -8.74228e-08, 0, 1.94442, 0, 1.69987e-07, 0, -1, -0.0822773, 2.95838, 0)
@@ -553,10 +557,12 @@ outline_size = 18
 
 [node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_sbt4w")
+texture = SubResource("ViewportTexture_yfjch")
 MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)
+ClearMode = 0
+UpdateMode = 2
 
 [node name="Title2" type="Label3D" parent="Displays/MysticalParticles"]
 transform = Transform3D(-1.94442, 0, -8.74228e-08, 0, 1.94442, 0, 1.69987e-07, 0, -1, -0.0822773, 3.81938, 0)

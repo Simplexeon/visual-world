@@ -6,7 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rny2v"]
 render_priority = 0
 shader = ExtResource("1_o2opc")
-shader_parameter/amplifier = 2.0
+shader_parameter/amplifier = 1.0
 shader_parameter/weight = null
 shader_parameter/position = null
 
@@ -16,7 +16,7 @@ size = Vector2(0.5, 0.5)
 
 [node name="ShaderFieldObject" type="Node3D"]
 script = ExtResource("1_spvly")
-PositionAmp = 999.0
+PositionAmp = 10.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_h5lse")

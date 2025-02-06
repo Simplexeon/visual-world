@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" path="res://pieces/portal_display_3d/portal_display_3d.gd" id="1_ppdk8"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ufbul"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_upugh"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="PortalDisplay3D" type="Sprite3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51587, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_ufbul")
+texture = SubResource("ViewportTexture_upugh")
 script = ExtResource("1_ppdk8")
+ClearMode = null
+UpdateMode = null
 
 [node name="DisplayWindow" type="SubViewport" parent="."]
 own_world_3d = true

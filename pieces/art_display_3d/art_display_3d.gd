@@ -32,6 +32,18 @@ class_name ArtDisplay3D
 				item.global_position = half_size;
 			
 
+@export var ClearMode : SubViewport.ClearMode :
+	set(value):
+		ClearMode = value;
+		if(is_node_ready()):
+			DisplayWindow.render_target_clear_mode = value;
+
+@export var UpdateMode : SubViewport.UpdateMode :
+	set(value):
+		UpdateMode = value;
+		if(is_node_ready()):
+			DisplayWindow.render_target_update_mode = value;
+
 
 # Data
 
@@ -50,6 +62,8 @@ func _ready() -> void:
 	
 	create_piece(ArtPiece);
 	Size = Size;
+	UpdateMode = UpdateMode;
+	ClearMode = ClearMode;
 	
 	texture = DisplayWindow.get_texture();
 	
