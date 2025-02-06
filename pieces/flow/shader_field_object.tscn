@@ -6,7 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rny2v"]
 render_priority = 0
 shader = ExtResource("1_o2opc")
-shader_parameter/amplifier = null
+shader_parameter/amplifier = 2.0
 shader_parameter/weight = null
 shader_parameter/position = null
 

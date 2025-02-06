@@ -56,7 +56,7 @@ func reset() -> void:
 	
 	var children : Array[Node] = Things.get_children();
 	for item in children:
-		Things.remove_child(item);
+		item.queue_free();
 
 func create_thing() -> void:
 	

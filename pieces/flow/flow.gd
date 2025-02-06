@@ -124,7 +124,7 @@ func SetupField() -> void:
 	
 	var genChildren : Array[Node] = Generation.get_children();
 	for child in genChildren:
-		Generation.remove_child(child);
+		child.queue_free();
 	
 	var halfBounds : Vector3 = FieldBounds * 0.5;
 	var drawPos : Vector3 = global_position - halfBounds;
