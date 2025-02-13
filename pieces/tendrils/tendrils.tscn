@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://db1hp63w12uu8"]
+
+[ext_resource type="Shader" path="res://pieces/tendrils/tendrils.gdshader" id="1_hlg2r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_onwvf"]
+render_priority = 0
+shader = ExtResource("1_hlg2r")
+shader_parameter/amplifier = 1.0
+shader_parameter/movement_amplifier = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_s1ew5"]
+material = SubResource("ShaderMaterial_onwvf")
+
+[node name="Tendrils" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("SphereMesh_s1ew5")

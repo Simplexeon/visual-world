@@ -5,6 +5,7 @@ extends Node3D
 
 # Properties
 
+@export var Enabled : bool = true;
 @export var FieldBounds : Vector3 = Vector3(20.0, 20.0, 20.0);
 @export var GridCount : int = 50;
 @export var DrawObject : PackedScene;
@@ -43,6 +44,9 @@ class Point:
 # Processes
 
 func _ready() -> void:
+	
+	if(!Enabled):
+		return;
 	
 	#PlayerRadius.sample_baked(0.0);
 	rangeSquared = pow(MaxPlayerRange, 2.0);

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh6kctn48q03j"]
+
+[ext_resource type="Script" path="res://pieces/wall_drawing_interperetation/7_th_wall.gd" id="1_issaq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_eswab"]
+
+[node name="7ThWall" type="Node2D"]
+script = ExtResource("1_issaq")
+GridSize = Vector2(10, 10)
+Area = Vector2(300, 300)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.67604, 0.264551, 1)
+show_behind_parent = true
+position = Vector2(0.500004, 0.5)
+scale = Vector2(1037, 625)
+texture = SubResource("PlaceholderTexture2D_eswab")
