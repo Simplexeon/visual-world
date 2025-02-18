@@ -1,0 +1,20 @@
+[gd_resource type="SphereMesh" load_steps=3 format=3 uid="uid://brajyqpwpboq"]
+
+[ext_resource type="Shader" path="res://pieces/tendrils/tendrils.gdshader" id="1_gn5xr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hlkd1"]
+render_priority = 0
+shader = ExtResource("1_gn5xr")
+shader_parameter/scroll_l_modifier = 0.2
+shader_parameter/scroll_r_modifier = 0.1
+shader_parameter/hatching_color = null
+shader_parameter/line_weight = 1
+shader_parameter/line_spacing = 30.0
+shader_parameter/viewport_scaling_modifier = 0.1
+shader_parameter/view_dist = 10.0
+shader_parameter/transparency_modifier = 1.0
+
+[resource]
+material = SubResource("ShaderMaterial_hlkd1")
+radius = 0.25
+height = 0.5

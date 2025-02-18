@@ -20,7 +20,6 @@ noise = SubResource("FastNoiseLite_v6lr6")
 
 [node name="Flow" type="Node3D"]
 script = ExtResource("1_kxc77")
-Enabled = null
 FieldBounds = Vector3(10, 10, 10)
 GridCount = 20
 DrawObject = ExtResource("2_n7l0a")

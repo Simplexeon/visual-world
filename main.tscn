@@ -1,26 +1,22 @@
-[gd_scene load_steps=15 format=3 uid="uid://fnnahimtwfap"]
+[gd_scene load_steps=13 format=3 uid="uid://fnnahimtwfap"]
 
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_miht2"]
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="2_r5r4s"]
 [ext_resource type="PackedScene" uid="uid://cpryxfj87j1jg" path="res://pieces/art_display_3d/art_display_3d.tscn" id="3_wkk5x"]
 [ext_resource type="PackedScene" uid="uid://csdn0tiq77b3o" path="res://pieces/10000_things/10000_things.tscn" id="4_487vk"]
 [ext_resource type="PackedScene" uid="uid://b46s5g7858kra" path="res://pieces/portal_display_3d/portal_display_3d.tscn" id="5_cyjwt"]
-[ext_resource type="PackedScene" uid="uid://dh6kctn48q03j" path="res://pieces/wall_drawing_interperetation/7thWall.tscn" id="5_p5dw6"]
 [ext_resource type="PackedScene" uid="uid://dxsex67syigyi" path="res://pieces/dimension/dimension.tscn" id="6_nlfcx"]
 [ext_resource type="PackedScene" uid="uid://dxo1t2uy0rjuf" path="res://pieces/mythical_particles/mythical_particles.tscn" id="7_p74em"]
 [ext_resource type="PackedScene" uid="uid://b81ksftj562xg" path="res://pieces/flow/flow.tscn" id="8_6c05i"]
 [ext_resource type="PackedScene" uid="uid://db1hp63w12uu8" path="res://pieces/tendrils/tendrils.tscn" id="10_fu5w3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_p61a2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_w2vk2"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_mwi0f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_e234b"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_n56j0"]
-viewport_path = NodePath("DisplayWindow")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_mx3vt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5pytd"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -49,9 +45,9 @@ size = Vector3(1, 10, 47)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="World/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, -24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914825, 3.5, -24)
 gi_mode = 2
-size = Vector3(33, 10, 1)
+size = Vector3(17.1703, 10, 1)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="World/Walls"]
@@ -532,7 +528,7 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_p61a2")
+texture = SubResource("ViewportTexture_w2vk2")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 ClearMode = 1
@@ -544,23 +540,9 @@ text = "10,000 Things"
 font_size = 64
 outline_size = 18
 
-[node name="7th Wall" parent="Displays" instance=ExtResource("3_wkk5x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.79243, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_mwi0f")
-ArtPiece = ExtResource("5_p5dw6")
-Size = Vector2(800, 800)
-ClearMode = 1
-UpdateMode = 2
-
-[node name="Title" type="Label3D" parent="Displays/7th Wall"]
-transform = Transform3D(-1.94442, 0, 8.74228e-08, 0, 1.94442, 0, -1.69987e-07, 0, -1, 0, 3.61914, 0)
-text = "7th Wall"
-font_size = 64
-outline_size = 18
-
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_n56j0")
+texture = SubResource("ViewportTexture_e234b")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
@@ -575,7 +557,7 @@ outline_size = 18
 
 [node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_mx3vt")
+texture = SubResource("ViewportTexture_5pytd")
 MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)
@@ -599,4 +581,12 @@ text = "Tesseract"
 font_size = 64
 outline_size = 18
 
+[node name="Title" type="Label3D" parent="Displays"]
+transform = Transform3D(1.94442, 0, 0, 0, 1.94442, 0, 0, 0, 1, 18.2413, 6.52458, -25.6023)
+text = "Column Radial Terminus
+"
+font_size = 64
+outline_size = 18
+
 [node name="Tendrils" parent="Displays" instance=ExtResource("10_fu5w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1201, 3.2693, -20.1146)

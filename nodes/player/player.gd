@@ -42,8 +42,8 @@ func _physics_process(delta: float) -> void:
 	# INPUT FROM DEFAULT CHARACTER SCRIPT
 	
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta;
+	#if not is_on_floor():
+	#	velocity += get_gravity() * delta;
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
