@@ -1,6 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxsex67syigyi"]
+[gd_scene load_steps=5 format=3 uid="uid://dxsex67syigyi"]
+
+[ext_resource type="Shader" path="res://pieces/tendrils/tendrils.gdshader" id="1_w7eva"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmflg"]
+render_priority = 0
+shader = ExtResource("1_w7eva")
+shader_parameter/hatching_color = null
+shader_parameter/view_dist = 30.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jr8gs"]
+next_pass = SubResource("ShaderMaterial_lmflg")
 albedo_color = Color(0.450951, 0.928519, 0.559453, 1)
 metallic = 0.91
 metallic_specular = 1.0

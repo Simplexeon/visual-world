@@ -77,3 +77,39 @@ draw_pass_1 = SubResource("SphereMesh_ba724")
 script = ExtResource("2_3pxuf")
 Dimensions = Vector3(5, 5, 0)
 Speed = 2.0
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="Objects"]
+transform = Transform3D(0.999737, -0.0229491, 0, 0.0229491, 0.999737, 0, 0, 0, 1, 0, 0, 0)
+amount = 150
+lifetime = 10.0
+visibility_aabb = AABB(-4, -4, -30, 8, 8, 32)
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_84o8r")
+draw_pass_1 = SubResource("SphereMesh_ba724")
+script = ExtResource("2_3pxuf")
+Dimensions = Vector3(5, 5, 0)
+Speed = 2.0
+
+[node name="GPUParticles3D5" type="GPUParticles3D" parent="Objects"]
+transform = Transform3D(0.999737, -0.0229491, 0, 0.0229491, 0.999737, 0, 0, 0, 1, 0, 0, 0)
+amount = 150
+lifetime = 10.0
+visibility_aabb = AABB(-4, -4, -30, 8, 8, 32)
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_84o8r")
+draw_pass_1 = SubResource("SphereMesh_ba724")
+script = ExtResource("2_3pxuf")
+Dimensions = Vector3(5, 5, 0)
+Speed = 2.0
+
+[node name="GPUParticles3D6" type="GPUParticles3D" parent="Objects"]
+transform = Transform3D(0.999737, -0.0229491, 0, 0.0229491, 0.999737, 0, 0, 0, 1, 0, 0, 0)
+amount = 150
+lifetime = 10.0
+visibility_aabb = AABB(-4, -4, -30, 8, 8, 32)
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_84o8r")
+draw_pass_1 = SubResource("SphereMesh_ba724")
+script = ExtResource("2_3pxuf")
+Dimensions = Vector3(5, 5, 0)
+Speed = 2.0

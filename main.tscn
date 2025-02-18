@@ -10,13 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://b81ksftj562xg" path="res://pieces/flow/flow.tscn" id="8_6c05i"]
 [ext_resource type="PackedScene" uid="uid://db1hp63w12uu8" path="res://pieces/tendrils/tendrils.tscn" id="10_fu5w3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_w2vk2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_l1uyi"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_e234b"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_t1wmh"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5pytd"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_nk6x8"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -27,15 +27,15 @@ viewport_path = NodePath("DisplayWindow")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.967529, -1, 0)
 gi_mode = 2
-size = Vector3(33, 1, 47)
+size = Vector3(20.9351, 1, 47)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="World/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82965, 8, 0)
 gi_mode = 2
-size = Vector3(33, 1, 47)
+size = Vector3(22.6593, 1, 47)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="World/Walls"]
@@ -528,7 +528,7 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_w2vk2")
+texture = SubResource("ViewportTexture_l1uyi")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 ClearMode = 1
@@ -542,7 +542,7 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_e234b")
+texture = SubResource("ViewportTexture_t1wmh")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
@@ -557,7 +557,7 @@ outline_size = 18
 
 [node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_5pytd")
+texture = SubResource("ViewportTexture_nk6x8")
 MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)
