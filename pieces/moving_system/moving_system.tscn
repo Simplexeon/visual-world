@@ -7,5 +7,3 @@ script = ExtResource("1_mn7e8")
 LineColor = Color(0.566035, 0.1501, 0.79, 1)
 LineWidth = 2.0
 LineLengthAmp = 10.0
-
-[node name="Camera2D" type="Camera2D" parent="."]

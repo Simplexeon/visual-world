@@ -1,22 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://fnnahimtwfap"]
+[gd_scene load_steps=15 format=3 uid="uid://fnnahimtwfap"]
 
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_miht2"]
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="2_r5r4s"]
 [ext_resource type="PackedScene" uid="uid://cpryxfj87j1jg" path="res://pieces/art_display_3d/art_display_3d.tscn" id="3_wkk5x"]
 [ext_resource type="PackedScene" uid="uid://csdn0tiq77b3o" path="res://pieces/10000_things/10000_things.tscn" id="4_487vk"]
+[ext_resource type="PackedScene" uid="uid://obma0tc2ecjj" path="res://pieces/moving_system/moving_system.tscn" id="5_0q8n6"]
 [ext_resource type="PackedScene" uid="uid://b46s5g7858kra" path="res://pieces/portal_display_3d/portal_display_3d.tscn" id="5_cyjwt"]
 [ext_resource type="PackedScene" uid="uid://dxsex67syigyi" path="res://pieces/dimension/dimension.tscn" id="6_nlfcx"]
 [ext_resource type="PackedScene" uid="uid://dxo1t2uy0rjuf" path="res://pieces/mythical_particles/mythical_particles.tscn" id="7_p74em"]
 [ext_resource type="PackedScene" uid="uid://b81ksftj562xg" path="res://pieces/flow/flow.tscn" id="8_6c05i"]
 [ext_resource type="PackedScene" uid="uid://db1hp63w12uu8" path="res://pieces/tendrils/tendrils.tscn" id="10_fu5w3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_abvwt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_qe3hi"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_m48uy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wad02"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lw3gl"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_smu73"]
+viewport_path = NodePath("DisplayWindow")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rilio"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -528,7 +532,7 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_abvwt")
+texture = SubResource("ViewportTexture_qe3hi")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 ClearMode = 1
@@ -540,9 +544,22 @@ text = "10,000 Things"
 font_size = 64
 outline_size = 18
 
+[node name="Expanding Chaos" parent="Displays" instance=ExtResource("3_wkk5x")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, 0.533094)
+texture = SubResource("ViewportTexture_wad02")
+ArtPiece = ExtResource("5_0q8n6")
+Size = Vector2(600, 600)
+UpdateMode = 2
+
+[node name="Title" type="Label3D" parent="Displays/Expanding Chaos"]
+transform = Transform3D(-1.94442, 0, 8.74228e-08, 0, 1.94442, 0, -1.69987e-07, 0, -1, 0, 3.61914, 0)
+text = "Expanding Chaos"
+font_size = 64
+outline_size = 18
+
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_m48uy")
+texture = SubResource("ViewportTexture_smu73")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
@@ -557,7 +574,7 @@ outline_size = 18
 
 [node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_lw3gl")
+texture = SubResource("ViewportTexture_rilio")
 MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)
