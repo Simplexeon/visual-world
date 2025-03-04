@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsaeo1mtexe6j"]
+
+[ext_resource type="Script" path="res://pieces/game_of_strife/game_of_strife.gd" id="1_63iol"]
+
+[node name="GameOfStrife" type="Node2D"]
+script = ExtResource("1_63iol")
+TileSize = 15.0
+GridSize = Vector2i(15, 15)
+Colors = Array[Color]([Color(0, 0, 0, 1), Color(1, 1, 1, 1)])
+
+[node name="Camera2D" type="Camera2D" parent="."]
