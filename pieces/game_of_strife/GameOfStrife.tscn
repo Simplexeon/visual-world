@@ -5,9 +5,9 @@
 [node name="GameOfStrife" type="Node2D"]
 script = ExtResource("1_63iol")
 StartNumber = 1
-TileSize = 15.0
+TileSize = 4.0
 GridSize = Vector2i(150, 150)
 CycleTime = 0.25
-Colors = Array[Color]([Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0.90786, 0.189265, 0, 1), Color(0.0927958, 0.480804, 1, 1), Color(7.70092e-07, 0.754151, 0.0218625, 1)])
+Colors = Array[Color]([Color(0, 0, 0, 1), Color(0.0625, 0.25, 0.115625, 1), Color(0.1125, 0.45, 0.225, 1), Color(0.1625, 0.65, 0.40625, 1), Color(0.2125, 0.85, 0.6375, 1)])
 
 [node name="Camera2D" type="Camera2D" parent="."]
