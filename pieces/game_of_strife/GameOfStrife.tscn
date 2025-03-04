@@ -4,8 +4,10 @@
 
 [node name="GameOfStrife" type="Node2D"]
 script = ExtResource("1_63iol")
+StartNumber = 1
 TileSize = 15.0
-GridSize = Vector2i(15, 15)
-Colors = Array[Color]([Color(0, 0, 0, 1), Color(1, 1, 1, 1)])
+GridSize = Vector2i(150, 150)
+CycleTime = 0.25
+Colors = Array[Color]([Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0.90786, 0.189265, 0, 1), Color(0.0927958, 0.480804, 1, 1), Color(7.70092e-07, 0.754151, 0.0218625, 1)])
 
 [node name="Camera2D" type="Camera2D" parent="."]
