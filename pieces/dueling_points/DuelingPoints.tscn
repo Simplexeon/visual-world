@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0qdd77mtqi41"]
+
+[ext_resource type="Script" path="res://pieces/dueling_points/dueling_points.gd" id="1_7oaoq"]
+
+[node name="DuelingPoints" type="Node2D"]
+script = ExtResource("1_7oaoq")
+PointCount = 100
+PointSpeed = 2.0
+SpreadRadius = 400.0
+NeighborRange = 65.0
+LineWidth = 1.0
+LineColor = Color(0, 1, 1, 0.686275)
+RandomMovementStrength = 25.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
