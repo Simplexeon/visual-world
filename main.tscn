@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://fnnahimtwfap"]
+[gd_scene load_steps=17 format=3 uid="uid://fnnahimtwfap"]
 
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_miht2"]
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="2_r5r4s"]
@@ -11,19 +11,24 @@
 [ext_resource type="PackedScene" uid="uid://b81ksftj562xg" path="res://pieces/flow/flow.tscn" id="8_6c05i"]
 [ext_resource type="PackedScene" uid="uid://db1hp63w12uu8" path="res://pieces/tendrils/tendrils.tscn" id="10_fu5w3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5usok"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mde87"]
+diffuse_mode = 3
+specular_mode = 1
+texture_filter = 0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kojnq"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wnhcx"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_t2ap0"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_seg7s"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_k01mi"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_afy5d"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_65d4d"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xihcg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_p8dvy"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -79,7 +84,7 @@ material = ExtResource("1_miht2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, 2)
 gi_mode = 2
 size = Vector3(1, 10, 1)
-material = ExtResource("1_miht2")
+material = SubResource("StandardMaterial3D_mde87")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="World/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, -3)
@@ -535,7 +540,7 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_5usok")
+texture = SubResource("ViewportTexture_kojnq")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 ClearMode = 1
@@ -549,7 +554,7 @@ outline_size = 18
 
 [node name="Expanding Chaos" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, 0.533094)
-texture = SubResource("ViewportTexture_wnhcx")
+texture = SubResource("ViewportTexture_t2ap0")
 Size = Vector2(600, 600)
 
 [node name="Title" type="Label3D" parent="Displays/Expanding Chaos"]
@@ -560,7 +565,7 @@ outline_size = 18
 
 [node name="Game of Strife" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, 13.2736)
-texture = SubResource("ViewportTexture_seg7s")
+texture = SubResource("ViewportTexture_k01mi")
 ArtPiece = ExtResource("5_dq8iu")
 Size = Vector2(600, 600)
 UpdateMode = 2
@@ -573,7 +578,7 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_afy5d")
+texture = SubResource("ViewportTexture_65d4d")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
@@ -588,7 +593,7 @@ outline_size = 18
 
 [node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_xihcg")
+texture = SubResource("ViewportTexture_p8dvy")
 MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)
