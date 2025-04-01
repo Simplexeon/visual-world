@@ -107,20 +107,19 @@ void fragment() {
 	
 	vec2 uv = VERTEX.xz + vec2(TIME * time_mod);
 	
-	// Done this way for efficiency, no if statement
-	float enabled = float(v > cell_culling);
-	ALBEDO = main_color * enabled;
-	ALPHA = v;
+	vec2 c;
 	
-	if(v < edge_threshhold && bool(enabled)) {
+	float new_v = Voronoi(uv * scaling, scaling, c);
+	
+	// Done this way for efficiency, no if statement
+	float enabled = float(new_v > cell_culling);
+	ALBEDO = main_color * enabled;
+	EMISSION = main_color * enabled;
+	FOG.a = new_v * 0.4;
+	ALPHA = new_v;
+	
+	if(new_v < edge_threshhold && bool(enabled)) {
 		ALBEDO = edge_color;
 		ALPHA = 1.;
 	}
-}
-
-void light() {
-	// Called for every pixel for every light affecting the material.
-	// Uncomment to replace the default light processing function with this one.
-	
-	DIFFUSE_LIGHT = vec3(0.8);
 }

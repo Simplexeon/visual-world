@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://fnnahimtwfap"]
+[gd_scene load_steps=19 format=3 uid="uid://fnnahimtwfap"]
 
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_miht2"]
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="2_r5r4s"]
@@ -17,20 +17,23 @@ diffuse_mode = 3
 specular_mode = 1
 texture_filter = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dxfnl"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_15xu1"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_88sy3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_65ses"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dpjfu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ufqx4"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_t7v82"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ijhl7"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_sfyt6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_noux0"]
 viewport_path = NodePath("DisplayWindow")
+
+[sub_resource type="Environment" id="Environment_01rej"]
+glow_enabled = true
 
 [node name="Main" type="Node3D"]
 
@@ -607,7 +610,7 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_dxfnl")
+texture = SubResource("ViewportTexture_15xu1")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 ClearMode = 1
@@ -621,7 +624,7 @@ outline_size = 18
 
 [node name="Expanding Chaos" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, 0.533094)
-texture = SubResource("ViewportTexture_88sy3")
+texture = SubResource("ViewportTexture_65ses")
 Size = Vector2(600, 600)
 
 [node name="Title" type="Label3D" parent="Displays/Expanding Chaos"]
@@ -632,7 +635,7 @@ outline_size = 18
 
 [node name="Game of Strife" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, 13.2736)
-texture = SubResource("ViewportTexture_dpjfu")
+texture = SubResource("ViewportTexture_ufqx4")
 ArtPiece = ExtResource("5_dq8iu")
 Size = Vector2(600, 600)
 UpdateMode = 2
@@ -645,7 +648,7 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_t7v82")
+texture = SubResource("ViewportTexture_ijhl7")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
@@ -660,7 +663,7 @@ outline_size = 18
 
 [node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_sfyt6")
+texture = SubResource("ViewportTexture_noux0")
 MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)
@@ -703,3 +706,6 @@ transform = Transform3D(-8.49933e-08, 0, 1, 0, 1.94442, 0, -1.94442, 0, -4.37114
 text = "Orb of Orbs
 "
 outline_size = 18
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_01rej")
