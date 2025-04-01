@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdu5f60gamh0i"]
+[gd_scene load_steps=5 format=3 uid="uid://bdu5f60gamh0i"]
 
 [ext_resource type="Script" path="res://nodes/player/player.gd" id="1_3qyv5"]
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_lbppq"]
-[ext_resource type="PackedScene" uid="uid://eibw2r8kk16e" path="res://pieces/hitomezashi_drunken_vision/hitomezashi-vision.tscn" id="3_6ebkl"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4eg8e"]
 material = ExtResource("1_lbppq")
@@ -23,6 +22,3 @@ shape = SubResource("CapsuleShape3D_sm8jo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.636839, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HitomezashiVision" parent="CanvasLayer" instance=ExtResource("3_6ebkl")]
-position = Vector2(600, 300)

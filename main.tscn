@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fnnahimtwfap"]
+[gd_scene load_steps=18 format=3 uid="uid://fnnahimtwfap"]
 
 [ext_resource type="Material" uid="uid://dnieh77dyh4ot" path="res://materials/walls.tres" id="1_miht2"]
 [ext_resource type="PackedScene" uid="uid://bdu5f60gamh0i" path="res://nodes/player/player.tscn" id="2_r5r4s"]
@@ -10,25 +10,26 @@
 [ext_resource type="PackedScene" uid="uid://dxo1t2uy0rjuf" path="res://pieces/mythical_particles/mythical_particles.tscn" id="7_p74em"]
 [ext_resource type="PackedScene" uid="uid://b81ksftj562xg" path="res://pieces/flow/flow.tscn" id="8_6c05i"]
 [ext_resource type="PackedScene" uid="uid://db1hp63w12uu8" path="res://pieces/tendrils/tendrils.tscn" id="10_fu5w3"]
+[ext_resource type="PackedScene" uid="uid://7bajt4e1wvuv" path="res://pieces/orb_of_orbs/orb_of_orbs.tscn" id="11_ttirg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mde87"]
 diffuse_mode = 3
 specular_mode = 1
 texture_filter = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kojnq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dxfnl"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_t2ap0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_88sy3"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_k01mi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dpjfu"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_65d4d"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_t7v82"]
 viewport_path = NodePath("DisplayWindow")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_p8dvy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_sfyt6"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="Main" type="Node3D"]
@@ -39,21 +40,33 @@ viewport_path = NodePath("DisplayWindow")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.967529, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.807, -1, 0)
 gi_mode = 2
-size = Vector3(20.9351, 1, 47)
+size = Vector3(34.4842, 1, 47)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="World/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82965, 8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09877, 8, 0)
 gi_mode = 2
-size = Vector3(22.6593, 1, 47)
+size = Vector3(36.5161, 1, 47)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="World/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3.5, -5.71094)
 gi_mode = 2
-size = Vector3(1, 10, 47)
+size = Vector3(1, 10, 35.5781)
+material = ExtResource("1_miht2")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="World/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4828, 3.5, 11.4199)
+gi_mode = 2
+size = Vector3(13.9656, 10, 1.31641)
+material = ExtResource("1_miht2")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="World/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9124, 3.5, 17.5955)
+gi_mode = 2
+size = Vector3(0.948334, 10, 13.6675)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="World/Walls"]
@@ -69,9 +82,9 @@ size = Vector3(1, 10, 37)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="World/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85791, 3.5, 24)
 gi_mode = 2
-size = Vector3(19, 10, 1)
+size = Vector3(32.7158, 10, 1)
 material = ExtResource("1_miht2")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="World/Walls"]
@@ -120,6 +133,60 @@ spot_angle = 74.8765
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="World/Lighting"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 7.48761, 12)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D74" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20.021, 7.5969, 13.9493)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D75" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20.021, 7.5969, 17.9493)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D76" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20.021, 7.5969, 21.9493)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D77" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.0508, 7.5969, 13.9493)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D78" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.0508, 7.5969, 17.9493)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D79" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.0508, 7.5969, 21.9493)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D80" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.5096, 7.5969, 13.9493)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D81" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.5096, 7.5969, 17.9493)
+light_energy = 0.8
+spot_range = 14.0
+spot_angle = 74.8765
+
+[node name="SpotLight3D82" type="SpotLight3D" parent="World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.5096, 7.5969, 21.9493)
 light_energy = 0.8
 spot_range = 14.0
 spot_angle = 74.8765
@@ -540,7 +607,7 @@ MouseSens = 0.1
 
 [node name="10000 Things" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, -8.53927)
-texture = SubResource("ViewportTexture_kojnq")
+texture = SubResource("ViewportTexture_dxfnl")
 ArtPiece = ExtResource("4_487vk")
 Size = Vector2(600, 600)
 ClearMode = 1
@@ -554,7 +621,7 @@ outline_size = 18
 
 [node name="Expanding Chaos" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, 0.533094)
-texture = SubResource("ViewportTexture_t2ap0")
+texture = SubResource("ViewportTexture_88sy3")
 Size = Vector2(600, 600)
 
 [node name="Title" type="Label3D" parent="Displays/Expanding Chaos"]
@@ -565,7 +632,7 @@ outline_size = 18
 
 [node name="Game of Strife" parent="Displays" instance=ExtResource("3_wkk5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.41334, 3.33411, 13.2736)
-texture = SubResource("ViewportTexture_k01mi")
+texture = SubResource("ViewportTexture_dpjfu")
 ArtPiece = ExtResource("5_dq8iu")
 Size = Vector2(600, 600)
 UpdateMode = 2
@@ -578,7 +645,7 @@ outline_size = 18
 
 [node name="Dimension" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20459, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_65d4d")
+texture = SubResource("ViewportTexture_t7v82")
 TransparentBackground = true
 ArtPiece = ExtResource("6_nlfcx")
 Size = Vector2(640, 512)
@@ -593,7 +660,7 @@ outline_size = 18
 
 [node name="MysticalParticles" parent="Displays" instance=ExtResource("5_cyjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259221, 3.09665, 23.1213)
-texture = SubResource("ViewportTexture_p8dvy")
+texture = SubResource("ViewportTexture_sfyt6")
 MovementScaling = 3.0
 ArtPiece = ExtResource("7_p74em")
 Size = Vector2(1000, 650)
@@ -608,6 +675,7 @@ outline_size = 18
 
 [node name="Flow" parent="Displays" instance=ExtResource("8_6c05i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6717, -17.874)
+Enabled = false
 FieldBounds = Vector3(7, 7, 7)
 
 [node name="Title3" type="Label3D" parent="Displays/Flow"]
@@ -625,4 +693,13 @@ transform = Transform3D(1.94442, 0, 0, 0, 1.94442, 0, 0, 0, 1, 0.121201, 3.25528
 text = "Column Radial Terminus
 "
 font_size = 64
+outline_size = 18
+
+[node name="Orb Of Orbs" parent="Displays" instance=ExtResource("11_ttirg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8704, -0.319039, 17.8737)
+
+[node name="Title" type="Label3D" parent="Displays/Orb Of Orbs"]
+transform = Transform3D(-8.49933e-08, 0, 1, 0, 1.94442, 0, -1.94442, 0, -4.37114e-08, -0.0774965, 0.0500038, 0.0204163)
+text = "Orb of Orbs
+"
 outline_size = 18

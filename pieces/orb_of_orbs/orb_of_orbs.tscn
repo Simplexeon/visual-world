@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://7bajt4e1wvuv"]
+
+[ext_resource type="Shader" path="res://pieces/orb_of_orbs/orb_of_orbs.gdshader" id="1_n2pqh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3pfc1"]
+render_priority = 0
+shader = ExtResource("1_n2pqh")
+
+[node name="Orb Of Orbs" type="CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00744247, 0.010417, -0.00394154)
+radius = 1.13989
+radial_segments = 100
+rings = 100
+material = SubResource("ShaderMaterial_3pfc1")

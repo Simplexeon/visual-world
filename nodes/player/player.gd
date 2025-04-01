@@ -11,7 +11,7 @@ class_name Player3D
 # Components
 
 @onready var Camera : Camera3D = $Camera3D;
-@onready var HitoVis : Node2D = $CanvasLayer/HitomezashiVision;
+#@onready var HitoVis : Node2D = $CanvasLayer/HitomezashiVision;
 
 
 # Processes
@@ -38,8 +38,8 @@ func _input(event: InputEvent) -> void:
 	if(event.is_action_pressed("debug")):
 		print_orphan_nodes();
 	
-	if(event.is_action_pressed(&"toggle_vision")):
-		HitoVis.visible = !HitoVis.visible;
+	#if(event.is_action_pressed(&"toggle_vision")):
+		#HitoVis.visible = !HitoVis.visible;
 
 
 func _physics_process(delta: float) -> void:
