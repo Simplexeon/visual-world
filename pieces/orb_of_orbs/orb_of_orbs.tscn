@@ -5,6 +5,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3pfc1"]
 render_priority = 0
 shader = ExtResource("1_n2pqh")
+shader_parameter/main_color = Color(0.9, 0.108, 0.108, 1)
+shader_parameter/edge_color = Color(0, 0, 0, 1)
 
 [node name="Orb Of Orbs" type="CSGSphere3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00744247, 0.010417, -0.00394154)

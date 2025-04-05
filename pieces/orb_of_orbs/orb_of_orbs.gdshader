@@ -3,14 +3,15 @@ shader_type spatial;
 
 // PARAMETERS
 
+uniform vec3 main_color : source_color;
+uniform vec3 edge_color : source_color;
+
 const float time_mod = 0.5;
 const float cell_shaper = .9;
 const float scaling = 6.0;
 const float cell_culling = 0.16;
 const float edge_threshhold = 0.25;
 const float point_threshhold = 0.62;
-const vec3 main_color = vec3(0. / 255., 55. / 255., 255. / 255.);
-const vec3 edge_color = vec3(255. / 255., 115. / 255., 0. / 255.);
 
 
 // FUNCTIONS --------------
@@ -120,6 +121,7 @@ void fragment() {
 	
 	if(new_v < edge_threshhold && bool(enabled)) {
 		ALBEDO = edge_color;
+		EMISSION = edge_color;
 		ALPHA = 1.;
 	}
 }
