@@ -14,6 +14,8 @@ class_name EnemySpawner3D
 
 # Data
 
+var speed : float = 1.0;
+
 # Processes
 
 func _ready() -> void:
@@ -25,4 +27,5 @@ func _ready() -> void:
 
 
 func _end_animation() -> void:
+	#speed *= -1;
 	Animator.play(&"spawn");

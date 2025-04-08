@@ -103,7 +103,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_lyjes"]
 resource_name = "spawn"
-length = 2.3
+length = 2.65
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,10 +147,10 @@ tracks/3/path = NodePath("ParticleCube/CubeLines:Emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -171,10 +171,10 @@ tracks/5/path = NodePath("ParticleCube:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1.3, 1.9, 2.2),
-"transitions": PackedFloat32Array(1, -2, -2, -2),
+"times": PackedFloat32Array(0, 1.3, 1.9, 2.2, 2.63333),
+"transitions": PackedFloat32Array(1, -2, -2, -2, -0.5),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(12.5664, 0, 12.5664), Vector3(-6.28319, 0, -6.28319), Vector3(12.5664, 0, 12.5664)]
+"values": [Vector3(0, 0, 0), Vector3(12.5664, 0, 12.5664), Vector3(-6.28319, 0, -6.28319), Vector3(12.5664, 0, 12.5664), Vector3(0, 0, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -183,10 +183,10 @@ tracks/6/path = NodePath("ParticleCube:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 1.56667, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 1.56667, 2.2, 2.6),
+"transitions": PackedFloat32Array(1, 2, 1, 1, 2),
 "update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(3, 3, 3)]
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(3, 3, 3), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_huvdy"]
@@ -309,8 +309,8 @@ fixed_fps = 60
 process_material = ExtResource("3_4fn2m")
 draw_pass_1 = SubResource("QuadMesh_11nmi")
 
-[node name="CubeEmitter9" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.5, 0, 0.5)
+[node name="CubeEmitter10" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0.5)
 emitting = false
 amount = 150
 lifetime = 0.1
@@ -318,8 +318,8 @@ fixed_fps = 60
 process_material = ExtResource("3_4fn2m")
 draw_pass_1 = SubResource("QuadMesh_11nmi")
 
-[node name="CubeEmitter10" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0.5)
+[node name="CubeEmitter9" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 emitting = false
 amount = 150
 lifetime = 0.1
