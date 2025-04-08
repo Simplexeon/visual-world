@@ -318,8 +318,8 @@ fixed_fps = 60
 process_material = ExtResource("3_4fn2m")
 draw_pass_1 = SubResource("QuadMesh_11nmi")
 
-[node name="CubeEmitter9" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+[node name="CubeEmitter11" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.5, 0, -0.5)
 emitting = false
 amount = 150
 lifetime = 0.1
@@ -327,8 +327,8 @@ fixed_fps = 60
 process_material = ExtResource("3_4fn2m")
 draw_pass_1 = SubResource("QuadMesh_11nmi")
 
-[node name="CubeEmitter11" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.5, 0, -0.5)
+[node name="CubeEmitter13" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.5, 0, 0.5)
 emitting = false
 amount = 150
 lifetime = 0.1
@@ -488,7 +488,7 @@ spot_range = 75.4816
 spot_angle = 35.471
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.989006, 0.147878, 0, -0.147878, 0.989006, 0, 1.01086, 3.56413)
+transform = Transform3D(1, 0, 0, 0, 0.998421, -0.0561705, 0, 0.0561705, 0.998421, 0, 1.01086, 4.89081)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_df3jg")
