@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://db1hp63w12uu8"]
 
-[ext_resource type="Script" path="res://pieces/tendrils/mover.gd" id="2_3pxuf"]
-[ext_resource type="Shader" path="res://pieces/tendrils/tendrils.gdshader" id="2_i50if"]
+[ext_resource type="Script" uid="uid://dma4pjr5qfo8b" path="res://pieces/tendrils/mover.gd" id="2_3pxuf"]
+[ext_resource type="Shader" uid="uid://dbim4e7faf2dq" path="res://pieces/tendrils/tendrils.gdshader" id="2_i50if"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_84o8r"]
 gravity = Vector3(0, 0, -1)

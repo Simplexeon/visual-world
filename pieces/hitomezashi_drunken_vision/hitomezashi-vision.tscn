@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://eibw2r8kk16e"]
 
-[ext_resource type="Shader" path="res://pieces/hitomezashi_drunken_vision/hitomezashi-vision.gdshader" id="1_7rixg"]
+[ext_resource type="Shader" uid="uid://bhyr10tkgjfyn" path="res://pieces/hitomezashi_drunken_vision/hitomezashi-vision.gdshader" id="1_7rixg"]
 [ext_resource type="Texture2D" uid="uid://cd1d6twugxvcl" path="res://assets/screen_mask.png" id="2_tlex5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7tyy0"]
@@ -39,9 +39,9 @@ shader_parameter/scaling = 1.0
 shader_parameter/time_scale = 0.2345
 shader_parameter/seedA = PackedInt32Array(0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1)
 shader_parameter/seedB = PackedInt32Array(1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0)
-shader_parameter/threshold = 0.072
 shader_parameter/noiseA = SubResource("NoiseTexture2D_lhyir")
 shader_parameter/noiseB = SubResource("NoiseTexture2D_3ppb6")
+shader_parameter/threshold = 0.072
 
 [node name="HitomezashiVision" type="Node2D"]
 

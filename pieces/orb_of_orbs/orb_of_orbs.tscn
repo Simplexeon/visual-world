@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://7bajt4e1wvuv"]
 
-[ext_resource type="Shader" path="res://pieces/orb_of_orbs/orb_of_orbs.gdshader" id="1_n2pqh"]
+[ext_resource type="Shader" uid="uid://b5cg0m0bpfa33" path="res://pieces/orb_of_orbs/orb_of_orbs.gdshader" id="1_n2pqh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3pfc1"]
 render_priority = 0

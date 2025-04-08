@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://55rrjroalyi"]
 
-[ext_resource type="Shader" path="res://pieces/flow/shader_field_object.gdshader" id="1_o2opc"]
-[ext_resource type="Script" path="res://pieces/flow/shader_field_object.gd" id="1_spvly"]
+[ext_resource type="Shader" uid="uid://t7uvb25ieobx" path="res://pieces/flow/shader_field_object.gdshader" id="1_o2opc"]
+[ext_resource type="Script" uid="uid://biqcaocdgwwxb" path="res://pieces/flow/shader_field_object.gd" id="1_spvly"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rny2v"]
 render_priority = 0
 shader = ExtResource("1_o2opc")
 shader_parameter/amplifier = 1.0
-shader_parameter/weight = null
-shader_parameter/position = null
+shader_parameter/weight = 0.0
+shader_parameter/position = Vector3(0, 0, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_h5lse"]
 material = SubResource("ShaderMaterial_rny2v")

@@ -1,0 +1,496 @@
+[gd_scene load_steps=12 format=3 uid="uid://cv8u2usx42i2r"]
+
+[ext_resource type="Material" uid="uid://dc5k4tsahsmn8" path="res://pieces/viridian_summoning/SpawnParticleMat.tres" id="1_e2ueo"]
+[ext_resource type="Material" uid="uid://5urgx2meqfpo" path="res://pieces/viridian_summoning/SpawnSpinnerParticleProcessor.tres" id="1_ixhrr"]
+[ext_resource type="Script" uid="uid://ehhed8d1fbpy" path="res://pieces/viridian_summoning/enemy_spawner.gd" id="1_tdlny"]
+[ext_resource type="Material" uid="uid://cwctwl4ttxe8i" path="res://pieces/viridian_summoning/SpawnCubeParticleProcessor.tres" id="3_4fn2m"]
+[ext_resource type="Script" uid="uid://bqv40lyp8h0bu" path="res://pieces/viridian_summoning/cube_lines.gd" id="4_56jyq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jovq0"]
+material = ExtResource("1_e2ueo")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_11nmi"]
+material = ExtResource("1_e2ueo")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="Animation" id="Animation_3e58u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spinner/CircleParticleEmitter:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spinner/CircleParticleEmitter2:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParticleCube/CubeLines:Emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParticleCube:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParticleCube:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParticleCube:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lyjes"]
+resource_name = "spawn"
+length = 2.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 14.6608, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spinner/CircleParticleEmitter:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spinner/CircleParticleEmitter2:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParticleCube/CubeLines:Emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParticleCube:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.83333),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0, -0.689259, 0), Vector3(0, 1.5, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParticleCube:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.9, 2.2),
+"transitions": PackedFloat32Array(1, -2, -2, -2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(12.5664, 0, 12.5664), Vector3(-6.28319, 0, -6.28319), Vector3(12.5664, 0, 12.5664)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParticleCube:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.56667, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(3, 3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_huvdy"]
+_data = {
+&"RESET": SubResource("Animation_3e58u"),
+&"spawn": SubResource("Animation_lyjes")
+}
+
+[sub_resource type="Environment" id="Environment_df3jg"]
+background_mode = 1
+background_energy_multiplier = 0.0
+tonemap_mode = 3
+glow_enabled = true
+glow_intensity = 4.85
+glow_strength = 0.12
+glow_bloom = 0.4
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.588721, 0.540291, 0.503389, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0744
+
+[node name="EnemySpawner" type="Node3D" node_paths=PackedStringArray("Animator", "ParticleEmitterA", "ParticleEmitterB", "ParticleEmitterC")]
+script = ExtResource("1_tdlny")
+Animator = NodePath("AnimationPlayer")
+ParticleEmitterA = NodePath("Spinner/CircleParticleEmitter")
+ParticleEmitterB = NodePath("Spinner/CircleParticleEmitter2")
+ParticleEmitterC = NodePath("ParticleCube/CubeLines/CubeEmitter")
+
+[node name="Spinner" type="Node3D" parent="."]
+
+[node name="CircleParticleEmitter" type="GPUParticles3D" parent="Spinner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+amount = 35
+lifetime = 0.8
+process_material = ExtResource("1_ixhrr")
+draw_pass_1 = SubResource("QuadMesh_jovq0")
+
+[node name="CircleParticleEmitter2" type="GPUParticles3D" parent="Spinner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+amount = 35
+lifetime = 0.8
+process_material = ExtResource("1_ixhrr")
+draw_pass_1 = SubResource("QuadMesh_jovq0")
+
+[node name="ParticleCube" type="Node3D" parent="."]
+
+[node name="CubeLines" type="Node3D" parent="ParticleCube"]
+script = ExtResource("4_56jyq")
+
+[node name="CubeEmitter" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.5)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter2" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.5)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter3" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, -0.5, 0)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter4" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, -0.5, 0)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter5" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter6" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter7" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0.5, 0)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter8" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0.5, 0)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter9" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.5, 0, 0.5)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter10" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0.5)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter11" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.5, 0, -0.5)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="CubeEmitter12" type="GPUParticles3D" parent="ParticleCube/CubeLines"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, -0.5)
+emitting = false
+amount = 150
+lifetime = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_4fn2m")
+draw_pass_1 = SubResource("QuadMesh_11nmi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_huvdy")
+}
+speed_scale = 0.25
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.24169e-08, 0.604098, 3.56665, 3.50937, 2.62696)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.55798e-08, 0.604098, 2.26913, 3.50937, 3.08037)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.67341e-08, 0.604098, 1.26418, 3.50937, 2.26282)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.71553e-08, 0.604098, 0.207062, 3.50937, 1.30698)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.7309e-08, 0.604098, 3.20314, 3.50937, 3.85285)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.73651e-08, 0.604098, 3.31635, 3.50937, 3.03846)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.73856e-08, 0.604098, 2.62826, 3.50937, 3.92213)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.55798e-08, 0.604098, 4.66954, 3.50937, 1.69368)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.67341e-08, 0.604098, 3.37202, 3.50937, 2.14708)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.71553e-08, 0.604098, 2.36707, 3.50937, 1.32954)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.7309e-08, 0.604098, 1.30995, 3.50937, 0.373692)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.73651e-08, 0.604098, 4.30604, 3.50937, 2.91956)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.73856e-08, 0.604098, 4.41924, 3.50937, 2.10518)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.73931e-08, 0.604098, 3.73116, 3.50937, 2.98885)
+light_color = Color(0.348524, 0.64049, 0.341046, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+light_specular = 5.0
+spot_range = 10.0
+spot_angle = 5.83517
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="."]
+transform = Transform3D(0.383089, -0.77321, 0.505361, 0.467095, 0.63415, 0.616178, -0.79691, -3.73968e-08, 0.604098, 4.47305, 4.49769, 2.55641)
+light_color = Color(0.9, 0.9, 0.9, 1)
+light_energy = 0.4
+light_indirect_energy = 1.6
+light_volumetric_fog_energy = 1.6
+light_specular = 5.0
+spot_range = 75.4816
+spot_angle = 35.471
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.989006, 0.147878, 0, -0.147878, 0.989006, 0, 1.01086, 3.56413)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_df3jg")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_end_animation" unbinds=1]

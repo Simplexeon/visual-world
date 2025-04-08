@@ -1,0 +1,8 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://5urgx2meqfpo"]
+
+[resource]
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 2.5
+initial_velocity_max = 2.5
+gravity = Vector3(0, 2.5, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://obma0tc2ecjj"]
 
-[ext_resource type="Script" path="res://pieces/moving_system/moving_system.gd" id="1_mn7e8"]
+[ext_resource type="Script" uid="uid://bdc3f1lu67esp" path="res://pieces/moving_system/moving_system.gd" id="1_mn7e8"]
 
 [node name="MovingSystem" type="Node2D"]
 script = ExtResource("1_mn7e8")

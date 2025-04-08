@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dxo1t2uy0rjuf"]
 
-[ext_resource type="Script" path="res://pieces/mythical_particles/gpu_particles_attractor_sphere_3d.gd" id="1_ij8dh"]
+[ext_resource type="Script" uid="uid://0nse27x85aeg" path="res://pieces/mythical_particles/gpu_particles_attractor_sphere_3d.gd" id="1_ij8dh"]
 
 [sub_resource type="Environment" id="Environment_amd1t"]
 glow_enabled = true
@@ -37,7 +37,7 @@ gradient = SubResource("Gradient_qojbo")
 width = 512
 
 [sub_resource type="Curve" id="Curve_1g1fa"]
-max_value = 15.0
+_limits = [0.0, 15.0, 0.0, 1.0]
 _data = [Vector2(0, 10.4118), 0.0, 20.4988, 0, 0, Vector2(0.151515, 12.3529), 11.9457, 11.9457, 0, 0, Vector2(0.393939, 15), 0.0, 0.0, 0, 0, Vector2(1, 9.17647), -20.1882, 0.0, 0, 0]
 point_count = 4
 

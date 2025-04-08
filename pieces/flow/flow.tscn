@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b81ksftj562xg"]
 
-[ext_resource type="Script" path="res://pieces/flow/flow.gd" id="1_kxc77"]
+[ext_resource type="Script" uid="uid://b4g7uh3l385e1" path="res://pieces/flow/flow.gd" id="1_kxc77"]
 [ext_resource type="PackedScene" uid="uid://55rrjroalyi" path="res://pieces/flow/shader_field_object.tscn" id="2_n7l0a"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_v6lr6"]

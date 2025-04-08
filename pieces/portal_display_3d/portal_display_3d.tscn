@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://b46s5g7858kra"]
 
-[ext_resource type="Script" path="res://pieces/portal_display_3d/portal_display_3d.gd" id="1_ppdk8"]
+[ext_resource type="Script" uid="uid://qnq0dn72qqyk" path="res://pieces/portal_display_3d/portal_display_3d.gd" id="1_ppdk8"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pxjip"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vjbho"]
 viewport_path = NodePath("DisplayWindow")
 
 [node name="PortalDisplay3D" type="Sprite3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51587, 2.18401, 6.44335)
-texture = SubResource("ViewportTexture_pxjip")
+texture = SubResource("ViewportTexture_vjbho")
 script = ExtResource("1_ppdk8")
 
 [node name="DisplayWindow" type="SubViewport" parent="."]

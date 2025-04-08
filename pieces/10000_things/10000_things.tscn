@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://csdn0tiq77b3o"]
 
-[ext_resource type="Script" path="res://pieces/10000_things/10000_things.gd" id="1_e1bic"]
+[ext_resource type="Script" uid="uid://d3j2456m676t6" path="res://pieces/10000_things/10000_things.gd" id="1_e1bic"]
 [ext_resource type="PackedScene" uid="uid://bdm12m0kte0gc" path="res://pieces/10000_things/godot_thing.tscn" id="2_nemc5"]
 
 [node name="10000 Things" type="Node2D"]

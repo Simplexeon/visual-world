@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dclnd7itdf7pb"]
 
-[ext_resource type="Script" path="res://pieces/flow/rod_line.gd" id="1_mnpbq"]
+[ext_resource type="Script" uid="uid://djjhxliwjies2" path="res://pieces/flow/rod_line.gd" id="1_mnpbq"]
 
 [node name="Shape" type="Node3D"]
 script = ExtResource("1_mnpbq")

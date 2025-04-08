@@ -1,0 +1,14 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://cwctwl4ttxe8i"]
+
+[sub_resource type="Curve" id="Curve_2du7a"]
+_data = [Vector2(0, 1), 0.0, -1.57412, 0, 0, Vector2(0.704036, 0.105882), -1.04941, -0.562185, 0, 0, Vector2(1, 0), -0.367785, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_flnbu"]
+curve = SubResource("Curve_2du7a")
+
+[resource]
+emission_shape = 3
+emission_box_extents = Vector3(0.5, 0.05, 0.05)
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_flnbu")
