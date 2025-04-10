@@ -678,7 +678,6 @@ outline_size = 18
 
 [node name="Flow" parent="Displays" instance=ExtResource("8_6c05i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6717, -17.874)
-Enabled = false
 FieldBounds = Vector3(7, 7, 7)
 
 [node name="Title3" type="Label3D" parent="Displays/Flow"]

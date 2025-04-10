@@ -20,8 +20,8 @@ noise = SubResource("FastNoiseLite_v6lr6")
 
 [node name="Flow" type="Node3D"]
 script = ExtResource("1_kxc77")
-FieldBounds = Vector3(10, 10, 10)
-GridCount = 20
+FieldBounds = Vector3(5, 5, 5)
+GridCount = 10
 DrawObject = ExtResource("2_n7l0a")
 RotationNoise = SubResource("NoiseTexture3D_5tc3v")
 MaxPlayerRange = 7.0
