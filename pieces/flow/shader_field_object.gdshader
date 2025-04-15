@@ -4,11 +4,20 @@ render_mode world_vertex_coords;
 // Parameters
 uniform float quad_rot_amp = 3.0;
 uniform float cube_rot_amp = 1.0;
+uniform float player_disruption;
+uniform float max_disruption_range;
 
 // Needed info
 group_uniforms data;
 uniform float weight;
 uniform vec3 position;
+
+// Efficient random function
+float random (vec2 st) {
+    return fract(sin(dot(st.xy,
+                         vec2(12.9898,78.233)))*
+        43758.5453123);
+}
 
 float calc_value(float modifier) {
 	return (sin(TIME + modifier) + cos(weight)) + (sin(position.x) * quad_rot_amp) - (sin(position.y + modifier) * quad_rot_amp)
@@ -55,9 +64,15 @@ void vertex() {
 	mat4 rotation = rotationY * rotationZ;
 	
 	
-	// Get distance to camera
+	// Get distance to camera for shaking
 	vec3 diff = VERTEX - CAMERA_POSITION_WORLD;
-	float diffLength = pow(diff.x, 2.0) + pow(diff.y, 2.0) + pow(diff.z, 2.0);
+	float diffLength = length(diff);
+	if(diffLength < max_disruption_range) {
+		float disruption_amount = max_disruption_range - diffLength;
+		float rand = random(rotationPosOffset.xz + UV);
+		vec3 direction = vec3(rand) * disruption_amount * player_disruption;
+		rotationPosOffset += direction;
+	}
 	
 	
 	// Apply cube rotation before position offset

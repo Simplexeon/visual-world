@@ -6,6 +6,7 @@ shader_type spatial;
 uniform vec3 main_color : source_color;
 uniform vec3 edge_color : source_color;
 
+
 const float time_mod = 0.5;
 const float cell_shaper = .9;
 const float scaling = 6.0;
