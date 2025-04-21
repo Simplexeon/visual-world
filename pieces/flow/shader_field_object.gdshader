@@ -26,11 +26,11 @@ float calc_value(float modifier) {
 
 void vertex() {
 	// Called for every vertex the material is visible on.
-	
+
 	// Rotate around the center
 	float centerRot = TIME * cube_rot_amp;
 	vec3 rotationPosOffset = vec3(sin(centerRot), 0, cos(centerRot)) * 2.0;
-	
+
 	// Calculate cube rotation matrices
 	mat4 cRotationY = mat4(
 		vec4(cos(centerRot), 0, sin(centerRot), 0),
@@ -44,10 +44,10 @@ void vertex() {
 		vec4(0, 0, 1.0f, 0),
 		vec4(0, 0, 0, 1)
 	);
-	
-	
+
+
 	// Create rotation matrix
-	
+
 	float rotDeg = TIME * quad_rot_amp;
 	mat4 rotationY = mat4(
 		vec4(cos(rotDeg), 0, sin(rotDeg), MODELVIEW_MATRIX[0][3]),
@@ -62,8 +62,8 @@ void vertex() {
 		vec4(0, 0, 0, 1)
 	);
 	mat4 rotation = rotationY * rotationZ;
-	
-	
+
+
 	// Get distance to camera for shaking
 	vec3 diff = VERTEX - CAMERA_POSITION_WORLD;
 	float diffLength = length(diff);
@@ -73,8 +73,8 @@ void vertex() {
 		vec3 direction = vec3(rand) * disruption_amount * player_disruption;
 		rotationPosOffset += direction;
 	}
-	
-	
+
+
 	// Apply cube rotation before position offset
 	VERTEX = (vec4(VERTEX, 1.0) * rotation).xyz;
 	VERTEX = (vec4(VERTEX, 1.0) * cRotationY * cRotationZ).xyz;
@@ -84,8 +84,8 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
-	
-	ALBEDO = vec3(calc_value(VERTEX.x + VERTEX.y), calc_value(UV.x + UV.y), calc_value(COLOR.x + 
+
+	ALBEDO = vec3(calc_value(VERTEX.x + VERTEX.y), calc_value(UV.x + UV.y), calc_value(COLOR.x +
 		COLOR.y + COLOR.z));
 	ALPHA = calc_value(NORMAL.x + NORMAL.y + NORMAL.z);
 }

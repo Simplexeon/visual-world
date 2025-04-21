@@ -23,5 +23,8 @@ func _ready() -> void:
 
 func UpdateData(weight : float, pos : Vector3) -> void:
 	
+	if !is_node_ready():
+		return;
+	
 	TrigShader.set_shader_parameter(&"weight", weight);
 	TrigShader.set_shader_parameter(&"position", pos * PositionAmp);
