@@ -32,16 +32,16 @@ var mode : Mode = Mode.Sine :
 		
 		match mode:
 			Mode.Sine:
-				hue_range = Vector2(0.0, 0.25);
+				hue_range = Vector2(0.0, 0.15);
 			
 			Mode.Triangle:
-				hue_range = Vector2(0.25, 0.45);
+				hue_range = Vector2(0.31, 0.46);
 			
 			Mode.Sawtooth:
-				hue_range = Vector2(0.45, 0.75);
+				hue_range = Vector2(0.46, 0.61);
 				
 			Mode.Square:
-				hue_range = Vector2(0.75, 1.0);
+				hue_range = Vector2(0.66, 0.85);
 
 enum Mode {
 	Sine,
@@ -91,7 +91,7 @@ func _input(event: InputEvent) -> void:
 		
 		var mat : Material = particle_emitter.draw_pass_1.material;
 		mat.emission = Color.from_hsv(
-				hue_range.y * 
+				(hue_range.y - hue_range.x) * 
 				((sin(relative_pos.x + relative_pos.y + Time.get_ticks_msec() / 1000.0) + 1.0) / 2.0)
 				+ hue_range.x,
 				0.85, 0.7);
