@@ -20,9 +20,35 @@ var frequency : float;
 var phase_modifier : float = 1.0;
 var phase : float = 0.0;
 
+var hue_range : Vector2;
+
 var playback : AudioStreamGeneratorPlayback;
 
 var playing : bool = false;
+
+var mode : Mode = Mode.Sine :
+	set(value):
+		mode = value;
+		
+		match mode:
+			Mode.Sine:
+				hue_range = Vector2(0.0, 0.25);
+			
+			Mode.Triangle:
+				hue_range = Vector2(0.25, 0.45);
+			
+			Mode.Sawtooth:
+				hue_range = Vector2(0.45, 0.75);
+				
+			Mode.Square:
+				hue_range = Vector2(0.75, 1.0);
+
+enum Mode {
+	Sine,
+	Triangle,
+	Sawtooth,
+	Square
+}
 
 
 # Processes
@@ -64,7 +90,10 @@ func _input(event: InputEvent) -> void:
 		
 		
 		var mat : Material = particle_emitter.draw_pass_1.material;
-		mat.emission = Color.from_hsv((sin(relative_pos.x + relative_pos.y + Time.get_ticks_msec() / 1000.0) + 1.0) / 2.0,
+		mat.emission = Color.from_hsv(
+				hue_range.y * 
+				((sin(relative_pos.x + relative_pos.y + Time.get_ticks_msec() / 1000.0) + 1.0) / 2.0)
+				+ hue_range.x,
 				0.85, 0.7);
 	
 	if event.is_action_pressed(&"toggle_vision"):
@@ -74,6 +103,11 @@ func _input(event: InputEvent) -> void:
 			env.environment.background_mode = Environment.BG_KEEP;
 		
 		env.environment.background_color = Color.BLACK;
+	
+	if event.is_action_pressed(&"switch_mode"):
+		mode += 1;
+		if mode >= Mode.size():
+			mode = 0;
 
 
 func _process(_delta: float) -> void:
@@ -92,6 +126,25 @@ func _update_generator() -> void:
 	
 	var available_frames : int = playback.get_frames_available();
 	while available_frames > 0:
-		playback.push_frame(Vector2.ONE * sin(phase * TAU));
-		phase = fmod(phase + delta, 1.0);
+		
+		match mode:
+			Mode.Sine:
+				playback.push_frame(Vector2.ONE * sin(phase * TAU));
+				phase = fmod(phase + delta, 1.0);
+			
+			Mode.Triangle:
+				playback.push_frame(Vector2.ONE * absf(fmod(phase, 2.0) - 1.0));
+				phase = fmod(phase + delta, 1.0);
+			
+			Mode.Sawtooth:
+				playback.push_frame(Vector2.ONE * (fmod(phase, 2.0) - 1.0));
+				phase = fmod(phase + delta, 1.0);
+			
+			Mode.Square:
+				if fmod(phase, 1.0) < 0.5:
+					playback.push_frame(Vector2.ONE);
+				else:
+					playback.push_frame(Vector2.ZERO);
+				phase = fmod(phase + delta, 1.0);
+			
 		available_frames -= 1;
