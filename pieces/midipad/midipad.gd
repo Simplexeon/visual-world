@@ -59,6 +59,7 @@ func _ready() -> void:
 	audio_player.stream.mix_rate = sample_hz;
 	audio_player.play();
 	playback = audio_player.get_stream_playback();
+
 	
 
 func _input(event: InputEvent) -> void:
@@ -68,6 +69,7 @@ func _input(event: InputEvent) -> void:
 			if event.pressed:
 				playing = true;
 				particle_emitter.emitting = true;
+				Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN;
 			else:
 				playing = false;
 				particle_emitter.emitting = false;
@@ -108,6 +110,9 @@ func _input(event: InputEvent) -> void:
 		mode += 1;
 		if mode >= Mode.size():
 			mode = 0;
+	
+	if event.is_action_pressed(&"ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
 
 
 func _process(_delta: float) -> void:

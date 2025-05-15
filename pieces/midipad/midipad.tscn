@@ -83,10 +83,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="UI/SubViewportContainer"]
+handle_input_locally = false
 audio_listener_enable_3d = true
 size = Vector2i(1152, 648)
+render_target_update_mode = 4
 
 [node name="World" type="Node3D" parent="UI/SubViewportContainer/SubViewport"]
 
@@ -107,4 +110,4 @@ draw_pass_1 = SubResource("SphereMesh_bcxru")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="UI/SubViewportContainer/SubViewport/World/GPUParticles3D"]
 stream = SubResource("AudioStreamGenerator_ul65s")
-volume_db = -30.0
+volume_db = -20.0
